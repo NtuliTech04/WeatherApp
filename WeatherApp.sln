@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access Layer", "Data Access Layer", "{03820EFD-AFE4-428A-ACCD-7BBA921A3A18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.DAL", "Weather.DAL\Weather.DAL.csproj", "{3AB7BC2A-B8E9-4D9A-AA80-217CA7DB6772}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic Layer", "Business Logic Layer", "{4F9CD2B3-988D-4AA2-8F24-EBA6D4524A59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.BLL", "Weather.BLL\Weather.BLL.csproj", "{D4D008F1-99A2-423D-9C8B-EBEEA5AA0011}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{A35E478C-85EB-412D-80EB-A7512E17CAB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CA45A0EA-710C-417F-8591-920F98185282}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C31FE520-718B-498F-953B-4EE673A764D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.API", "Weather.API\Weather.API.csproj", "{C8F920D0-18D0-4389-A157-64CBA4667C82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Weather Service Provider", "Weather Service Provider", "{3E5A66C3-BA68-40EE-BC83-EE4F47D69FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenWeatherMap.Client", "OpenWeatherMap.Client\OpenWeatherMap.Client.csproj", "{FB31ACAE-DDC1-40B2-B38E-6FA2FC2D5E2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AB7BC2A-B8E9-4D9A-AA80-217CA7DB6772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB7BC2A-B8E9-4D9A-AA80-217CA7DB6772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB7BC2A-B8E9-4D9A-AA80-217CA7DB6772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB7BC2A-B8E9-4D9A-AA80-217CA7DB6772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D008F1-99A2-423D-9C8B-EBEEA5AA0011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D008F1-99A2-423D-9C8B-EBEEA5AA0011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D008F1-99A2-423D-9C8B-EBEEA5AA0011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D008F1-99A2-423D-9C8B-EBEEA5AA0011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F920D0-18D0-4389-A157-64CBA4667C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F920D0-18D0-4389-A157-64CBA4667C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F920D0-18D0-4389-A157-64CBA4667C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F920D0-18D0-4389-A157-64CBA4667C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB31ACAE-DDC1-40B2-B38E-6FA2FC2D5E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB31ACAE-DDC1-40B2-B38E-6FA2FC2D5E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB31ACAE-DDC1-40B2-B38E-6FA2FC2D5E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB31ACAE-DDC1-40B2-B38E-6FA2FC2D5E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{03820EFD-AFE4-428A-ACCD-7BBA921A3A18} = {CA45A0EA-710C-417F-8591-920F98185282}
+		{3AB7BC2A-B8E9-4D9A-AA80-217CA7DB6772} = {03820EFD-AFE4-428A-ACCD-7BBA921A3A18}
+		{4F9CD2B3-988D-4AA2-8F24-EBA6D4524A59} = {CA45A0EA-710C-417F-8591-920F98185282}
+		{D4D008F1-99A2-423D-9C8B-EBEEA5AA0011} = {4F9CD2B3-988D-4AA2-8F24-EBA6D4524A59}
+		{A35E478C-85EB-412D-80EB-A7512E17CAB7} = {CA45A0EA-710C-417F-8591-920F98185282}
+		{C8F920D0-18D0-4389-A157-64CBA4667C82} = {A35E478C-85EB-412D-80EB-A7512E17CAB7}
+		{3E5A66C3-BA68-40EE-BC83-EE4F47D69FC3} = {CA45A0EA-710C-417F-8591-920F98185282}
+		{FB31ACAE-DDC1-40B2-B38E-6FA2FC2D5E2C} = {3E5A66C3-BA68-40EE-BC83-EE4F47D69FC3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {206AD2E1-F39D-4AE7-89FA-D7E5C78D5029}
+	EndGlobalSection
+EndGlobal
