@@ -4,7 +4,7 @@ using FluentResults;
 using Weather.BLL.DTOs;
 using Weather.BLL.Services.IService;
 using Weather.DAL.Abstractions;
-using Weather.BLL.Resources;
+using Weather.BLL.Constants.Resources;
 
 namespace Weather.BLL.Services
 {

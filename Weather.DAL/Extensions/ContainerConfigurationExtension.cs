@@ -10,12 +10,12 @@ namespace Weather.DAL.Extensions
     public static class ContainerConfigurationExtension
     {
         //Configures the dependencies defined in the DAL. 
-        public static void AddApplicationLayer(this IServiceCollection services, IConfiguration configuration)
+        public static void RegisterDALDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddOpenWeatherAPI(configuration);
             services.AddRepositories();
         }
-
+        
         //Configure OpenWeatherMap API Key
         private static void AddOpenWeatherAPI(this IServiceCollection services, IConfiguration configuration)
         {
