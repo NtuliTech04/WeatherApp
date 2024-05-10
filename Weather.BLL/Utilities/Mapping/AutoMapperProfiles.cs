@@ -32,6 +32,10 @@ namespace Weather.BLL.Utilities.Mapping
                     .ForMember(dest => dest.MaxTemp, opt => opt.MapFrom(src => src.temp_max))
                     .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.humidity));
 
+                //Maps WeatherAPIResponse Data Model from DAL to WeatherAPIResponse DTO from BLL
+                CreateMap<Weather.DAL.Data.WeatherAPIResponse.WeatherResponseData, Weather.BLL.DTOs.WeatherResponseDataDto>()
+                    .ForMember(dest => dest.WeatherForecastDataDto, opt => opt.MapFrom(src => src.WeatherForecastData));
+
                 //CreateMap<User, UserDTO>().ReverseMap(); //For same property names
             }
         }
