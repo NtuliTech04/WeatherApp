@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Weather.DAL.Entities
+namespace Weather.DAL.Models
 {
     public class Forcast
     {
