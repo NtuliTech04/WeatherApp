@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Weather.BLL.DTOs;
 using Weather.BLL.Services.IService;
+using Weather.BLL.Utilities.Exceptions;
+using Weather.BLL.Constants.Resources;
 
 namespace Weather.API.Controllers
 {
@@ -20,7 +22,16 @@ namespace Weather.API.Controllers
         [HttpGet, Route("weather-forecast")]
         public async Task<ActionResult<List<WeatherResponseDto>>> GetForecast(string location, string unit)
         {
-            return await Task.Run(() => Ok(_weatherService.GetWeatherForecast(location, unit)));
+            try
+            {
+                var forecast = _weatherService.GetWeatherForecast(location, unit);
+                return await Task.Run(() => Ok(forecast));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"{ex}");
+                return BadRequest($"{ErrorMessages.GeneralError}:{ex}");
+            }
         }
     }
 }

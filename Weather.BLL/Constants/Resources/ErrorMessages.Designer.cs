@@ -22,7 +22,7 @@ namespace Weather.BLL.Constants.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ErrorMessages {
+    public class ErrorMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Weather.BLL.Constants.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.BLL.Constants.Resources.ErrorMessages", typeof(ErrorMessages).Assembly);
@@ -51,7 +51,7 @@ namespace Weather.BLL.Constants.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,20 @@ namespace Weather.BLL.Constants.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Not expected data. Invalid Count: {0}.
+        ///   Looks up a localized string similar to An error occurred while processing the request.
         /// </summary>
-        internal static string GetDataFailed_InvalidCount {
+        public static string GeneralError {
             get {
-                return ResourceManager.GetString("GetDataFailed_InvalidCount", resourceCulture);
+                return ResourceManager.GetString("GeneralError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Data are empty or null.
+        /// </summary>
+        public static string GetDataFailed_NullOrEmpty {
+            get {
+                return ResourceManager.GetString("GetDataFailed_NullOrEmpty", resourceCulture);
             }
         }
     }

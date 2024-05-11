@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Weather.DAL.Abstractions;
-using Weather.DAL.Repositories.Factories;
 using Weather.DAL.Configurations;
 using Weather.DAL.Repositories;
 
@@ -30,7 +29,6 @@ namespace Weather.DAL.Extensions
         private static void AddRepositories(this IServiceCollection services)
         {
             services.AddTransient<IOpenWeatherClient, OpenWeatherClient>();
-            services.AddSingleton<IJsonSerializerSettingsFactory, JsonSerializerSettingsFactory>();
         }
     }
 }

@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
-    <UserSecretsId>004143ea-e54c-4fa8-882b-5e5fc6cc40e4</UserSecretsId>
+    <UserSecretsId>9a1669b0-00d6-4dbe-b93b-094384c34bd1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

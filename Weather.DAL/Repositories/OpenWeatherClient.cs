@@ -13,19 +13,16 @@ namespace Weather.DAL.Repositories
     {
         private readonly HttpClient _httpClient;
         private readonly OpenWeather _openWeatherConfig;
-        private readonly IJsonSerializerSettingsFactory _jsonSerializerSettingsFactory;
 
         public OpenWeatherClient
             (
                 IOptions<OpenWeather> options,
-                IHttpClientFactory httpClientFactory,
-                IJsonSerializerSettingsFactory jsonSerializerSettingsFactory
+                IHttpClientFactory httpClientFactory
             )
         {
             _openWeatherConfig = options.Value;
             Guard.Against.Null(httpClientFactory);
             _httpClient = httpClientFactory.CreateClient();
-            _jsonSerializerSettingsFactory = Guard.Against.Null(jsonSerializerSettingsFactory);
         }
 
         public Result<WeatherResponseData> GetFiveDayForecast(string location, string unit)

@@ -1,12 +1,12 @@
 ﻿using Ardalis.GuardClauses;
 using AutoMapper;
 using FluentResults;
+using Grpc.Core;
+using Weather.BLL.Constants.Resources;
 using Weather.BLL.DTOs;
 using Weather.BLL.Services.IService;
+using Weather.BLL.Utilities.Exceptions;
 using Weather.DAL.Abstractions;
-using Weather.BLL.Constants.Resources;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Weather.BLL.Services
 {
@@ -28,12 +28,12 @@ namespace Weather.BLL.Services
 
             if (forecastResult.IsFailed)
             {
-                //return await Task.Run(() => Result.Fail(forecastResult.Errors));
+                throw new BadRequestException(Result.Fail(forecastResult.Errors).ToString());
             }
 
             if (forecastResult.Value is null || !forecastResult.Value.WeatherForecastData.Any())
             {
-                //return await Task.Run(() => Result.Fail(ErrorMessages.GetDataFailed_InvalidCount));
+                throw new Utilities.Exceptions.NotFoundException(ErrorMessages.GetDataFailed_NullOrEmpty);
             }
 
             var mappedForecast = _mapper.Map<WeatherResponseDataDto>(forecastResult.Value);

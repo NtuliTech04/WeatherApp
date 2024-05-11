@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Serilog;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Weather.API.Extensions;
 using Weather.BLL.Extensions;
 using Weather.DAL.Extensions;
