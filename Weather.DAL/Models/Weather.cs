@@ -1,6 +1,7 @@
 ﻿namespace Weather.DAL.Models
 {
-    public sealed class WeatherCondition
+
+    public class Weather
     {
         public int id { get; set; }
         public string main { get; set; }

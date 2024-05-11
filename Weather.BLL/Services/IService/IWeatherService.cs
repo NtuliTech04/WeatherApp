@@ -1,10 +1,9 @@
-﻿using FluentResults;
-using Weather.BLL.DTOs;
+﻿using Weather.BLL.DTOs;
 
 namespace Weather.BLL.Services.IService
 {
     public interface IWeatherService
     {
-        Task<Result<WeatherResponseDataDto>> GetForecastWeather(string location, string unit);
+        List<WeatherResponseDto> GetWeatherForecast(string location, string unit);
     }
 }

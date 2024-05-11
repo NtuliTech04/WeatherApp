@@ -9,6 +9,8 @@ namespace Weather.DAL.Repositories.Factories
         {
             return new JsonSerializerSettings
             {
+                Formatting = Formatting.Indented,
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                 DateFormatString = "yyyy-MM-dd hh:mm"
             };
         }

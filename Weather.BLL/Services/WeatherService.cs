@@ -5,6 +5,8 @@ using Weather.BLL.DTOs;
 using Weather.BLL.Services.IService;
 using Weather.DAL.Abstractions;
 using Weather.BLL.Constants.Resources;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Weather.BLL.Services
 {
@@ -20,21 +22,23 @@ namespace Weather.BLL.Services
         }
 
 
-        public async Task<Result<WeatherResponseDataDto>> GetForecastWeather(string location, string unit)
+        public List<WeatherResponseDto> GetWeatherForecast(string location, string unit)
         {
-            var forecastResult = await _openWeatherClient.GetFiveDayForecast(location, unit);
+            var forecastResult = _openWeatherClient.GetFiveDayForecast(location, unit);
 
             if (forecastResult.IsFailed)
             {
-                return Result.Fail(forecastResult.Errors);
+                //return await Task.Run(() => Result.Fail(forecastResult.Errors));
             }
 
-            if (forecastResult.Value is null || forecastResult.Value.WeatherForecastData.Any())
+            if (forecastResult.Value is null || !forecastResult.Value.WeatherForecastData.Any())
             {
-                return Result.Fail(ErrorMessages.GetDataFailed_InvalidCount);
+                //return await Task.Run(() => Result.Fail(ErrorMessages.GetDataFailed_InvalidCount));
             }
 
-            return _mapper.Map<WeatherResponseDataDto>(forecastResult.Value);
+            var mappedForecast = _mapper.Map<WeatherResponseDataDto>(forecastResult.Value);
+
+            return mappedForecast.WeatherForecastDataDto.ToList();
         }
     }
 }

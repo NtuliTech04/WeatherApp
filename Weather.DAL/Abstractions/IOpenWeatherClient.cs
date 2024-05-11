@@ -5,6 +5,6 @@ namespace Weather.DAL.Abstractions
 {
     public interface IOpenWeatherClient
     {
-        Task<Result<WeatherResponseData>> GetFiveDayForecast(string location, string unit);
+        Result<WeatherResponseData> GetFiveDayForecast(string location, string unit);
     }
 }

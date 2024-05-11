@@ -5,8 +5,7 @@ using Weather.DAL.Configurations;
 using Ardalis.GuardClauses;
 using FluentResults;
 using Weather.DAL.Data.WeatherAPIResponse;
-using Newtonsoft.Json;
-
+using System.Text.Json;
 
 namespace Weather.DAL.Repositories
 {
@@ -18,9 +17,8 @@ namespace Weather.DAL.Repositories
 
         public OpenWeatherClient
             (
-                IHttpClientFactory httpClientFactory,
                 IOptions<OpenWeather> options,
-                IValidator<OpenWeather> optionsValidator,
+                IHttpClientFactory httpClientFactory,
                 IJsonSerializerSettingsFactory jsonSerializerSettingsFactory
             )
         {
@@ -30,7 +28,7 @@ namespace Weather.DAL.Repositories
             _jsonSerializerSettingsFactory = Guard.Against.Null(jsonSerializerSettingsFactory);
         }
 
-        public async Task<Result<WeatherResponseData>> GetFiveDayForecast(string location, string unit)
+        public Result<WeatherResponseData> GetFiveDayForecast(string location, string unit)
         {
             var request = new HttpRequestMessage
             {
@@ -38,14 +36,16 @@ namespace Weather.DAL.Repositories
                 RequestUri = new Uri(BuildOpenWeatherUrl(location, unit))
             };
 
-            return await SendAsyncSave<WeatherResponseData>(request);
+            var apiClientResults = SendSave<WeatherResponseData>(request);
+
+            return apiClientResults;
         }
 
-        private async Task<Result<T>> SendAsyncSave<T>(HttpRequestMessage requestMessage )
+        private Result<T> SendSave<T>(HttpRequestMessage requestMessage )
         {
             try
             {
-                return await SendAsync<T>(requestMessage);
+                return Send<T>(requestMessage);
             }
             catch (Exception ex)
             {
@@ -54,18 +54,19 @@ namespace Weather.DAL.Repositories
         }
 
 
-        private async Task<Result<T>> SendAsync<T>(HttpRequestMessage requestMessage)
+        private Result<T> Send<T>(HttpRequestMessage requestMessage)
         {
-            using var response = await _httpClient.SendAsync(requestMessage);
+            using var response = _httpClient.Send(requestMessage);
 
             if (!response.IsSuccessStatusCode)
             {
-                return Result.Fail($"Failed response to {nameof(SendAsync)}");
+                return Result.Fail($"Failed response to {nameof(Send)}");
             }
 
-            var resultContent = await response.Content.ReadAsStringAsync();
+            var resultContent = response.Content.ReadAsStringAsync().Result;
 
-            var result = JsonConvert.DeserializeObject<T>(resultContent, _jsonSerializerSettingsFactory.Create());
+            var result = JsonSerializer.Deserialize<T>(resultContent);
+
             if (result is null)
             {
                 return Result.Fail($"Failed to deserialize response.");
@@ -73,7 +74,6 @@ namespace Weather.DAL.Repositories
 
             return Result.Ok(result);
         }
-
 
         private string BuildOpenWeatherUrl(string location, string unit)
         {

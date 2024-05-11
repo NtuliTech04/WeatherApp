@@ -6,11 +6,13 @@
     <Nullable>disable</Nullable>
     <!--warning disable CS8632-->
 	<NoWarn>$(NoWarn);CS8632</NoWarn>
-	<!--<UserSecretsId>f9fc00eb-147d-4865-a9b0-6d1f626575c2</UserSecretsId>-->
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Abstractions\IOpenWeatherClientOt.cs" />
     <Compile Remove="Models\OpenWeatherEntities.cs" />
+    <Compile Remove="Repositories\OpenWeatherClientOt.cs" />
+    <Compile Remove="Repositories\OpenWeatherClientOut.cs" />
   </ItemGroup>
 
   <ItemGroup>

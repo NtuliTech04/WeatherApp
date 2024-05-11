@@ -22,6 +22,9 @@ namespace Weather.DAL.Extensions
             var openWeatherConfig = configuration.GetSection("OpenWeather");
             services.Configure<OpenWeather>(openWeatherConfig);
             services.AddHttpClient();
+
+            //var moviesConfig = configuration.GetSection("OpenWeather").Get<OpenWeather>();
+            //var WeatherAPIKey = configuration["OpenWeather:ApiKey"];
         }
 
         private static void AddRepositories(this IServiceCollection services)
