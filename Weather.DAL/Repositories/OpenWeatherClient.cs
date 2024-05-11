@@ -4,8 +4,8 @@ using Weather.DAL.Abstractions;
 using Weather.DAL.Configurations;
 using Ardalis.GuardClauses;
 using FluentResults;
-using Weather.DAL.Data.WeatherAPIResponse;
 using System.Text.Json;
+using Weather.DAL.Data.WeatherClientResponse;
 
 namespace Weather.DAL.Repositories
 {
@@ -25,7 +25,7 @@ namespace Weather.DAL.Repositories
             _httpClient = httpClientFactory.CreateClient();
         }
 
-        public Result<WeatherResponseData> GetFiveDayForecast(string location, string unit)
+        public Result<WeatherClientResponseData> GetFiveDayForecast(string location, string unit)
         {
             var request = new HttpRequestMessage
             {
@@ -33,7 +33,7 @@ namespace Weather.DAL.Repositories
                 RequestUri = new Uri(BuildOpenWeatherUrl(location, unit))
             };
 
-            var apiClientResults = SendSave<WeatherResponseData>(request);
+            var apiClientResults = SendSave<WeatherClientResponseData>(request);
 
             return apiClientResults;
         }

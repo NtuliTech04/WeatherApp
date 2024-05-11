@@ -1,10 +1,10 @@
 ﻿using FluentResults;
-using Weather.DAL.Data.WeatherAPIResponse;
+using Weather.DAL.Data.WeatherClientResponse;
 
 namespace Weather.DAL.Abstractions
 {
     public interface IOpenWeatherClient
     {
-        Result<WeatherResponseData> GetFiveDayForecast(string location, string unit);
+        Result<WeatherClientResponseData> GetFiveDayForecast(string location, string unit);
     }
 }

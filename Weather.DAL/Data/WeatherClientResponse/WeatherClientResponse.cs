@@ -1,16 +1,15 @@
 ﻿using System.Text.Json.Serialization;
 using Weather.DAL.Models;
 
-namespace Weather.DAL.Data.WeatherAPIResponse
+namespace Weather.DAL.Data.WeatherClientResponse
 {
-    public class WeatherResponse
+    public class WeatherClientResponse
     {
         [JsonPropertyName("dt")]
         public int dt { get; set; }
 
         [JsonPropertyName("weather")]
-        public IReadOnlyCollection<Weather.DAL.Models.Weather> 
-            Weather { get; init; } = new List<Weather.DAL.Models.Weather>();
+        public IReadOnlyCollection<Models.Weather> Weather { get; init; } = new List<Models.Weather>();
 
         [JsonPropertyName("main")]
         public Main Main { get; set; }
@@ -24,4 +23,10 @@ namespace Weather.DAL.Data.WeatherAPIResponse
         [JsonPropertyName("visibility")]
         public int visibility { get; set; }
     }
+
+    //public class WeatherClientGeoLocationResponse
+    //{
+    //    [JsonPropertyName("city")]
+    //    public City City { get; set; }
+    //}
 }

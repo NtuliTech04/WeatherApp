@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Weather.DAL.Data.WeatherClientResponse;
 
 namespace Weather.BLL.Utilities.Mapping
 {
@@ -9,7 +10,7 @@ namespace Weather.BLL.Utilities.Mapping
             public AutoMapperProfile()
             {
                 //Maps WeatherResponse Model from DAL to WeatherResponseDto from BLL
-                CreateMap<Weather.DAL.Data.WeatherAPIResponse.WeatherResponse, Weather.BLL.DTOs.WeatherResponseDto>()
+                CreateMap<WeatherClientResponse, Weather.BLL.DTOs.WeatherClientResponseDto>()
                     .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => src.dt))
                     .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.visibility))
                     .ForMember(dest => dest.Weather, opt => opt.MapFrom(src => src.Weather));
@@ -32,10 +33,19 @@ namespace Weather.BLL.Utilities.Mapping
                     .ForMember(dest => dest.Speed, opt => opt.MapFrom(src => src.speed))
                     .ForMember(dest => dest.Direction, opt => opt.MapFrom(src => src.deg));
 
-
                 //Maps WeatherAPIResponse Data Model from DAL to WeatherAPIResponse DTO from BLL
-                CreateMap<Weather.DAL.Data.WeatherAPIResponse.WeatherResponseData, Weather.BLL.DTOs.WeatherResponseDataDto>()
+                CreateMap<WeatherClientResponseData, Weather.BLL.DTOs.WeatherClientResponseDataDto>()
                     .ForMember(dest => dest.WeatherForecastDataDto, opt => opt.MapFrom(src => src.WeatherForecastData));
+
+
+                ////Maps City Model from DAL to CityDto from BLL
+                //CreateMap<Weather.DAL.Models.City, Weather.BLL.DTOs.CityDto>()
+                //    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name));
+
+                ////Maps Coord Model from DAL to CoordDto from BLL
+                //CreateMap<Weather.DAL.Models.Coord, Weather.BLL.DTOs.CoordDto>()
+                //    .ForMember(dest => dest.Lat, opt => opt.MapFrom(src => src.lat))
+                //    .ForMember(dest => dest.Lon, opt => opt.MapFrom(src => src.lon));
             }
         }
     }

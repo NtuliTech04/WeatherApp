@@ -20,7 +20,7 @@ namespace Weather.API.Controllers
         }
 
         [HttpGet, Route("weather-forecast")]
-        public async Task<ActionResult<List<WeatherResponseDto>>> GetForecast(string location, string unit)
+        public async Task<ActionResult<List<WeatherClientResponseDto>>> GetForecast(string location, string unit)
         {
             try
             {

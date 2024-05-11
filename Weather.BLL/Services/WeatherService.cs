@@ -1,7 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 using AutoMapper;
 using FluentResults;
-using Grpc.Core;
 using Weather.BLL.Constants.Resources;
 using Weather.BLL.DTOs;
 using Weather.BLL.Services.IService;
@@ -22,7 +21,7 @@ namespace Weather.BLL.Services
         }
 
 
-        public List<WeatherResponseDto> GetWeatherForecast(string location, string unit)
+        public List<WeatherClientResponseDto> GetWeatherForecast(string location, string unit)
         {
             var forecastResult = _openWeatherClient.GetFiveDayForecast(location, unit);
 
@@ -36,7 +35,7 @@ namespace Weather.BLL.Services
                 throw new Utilities.Exceptions.NotFoundException(ErrorMessages.GetDataFailed_NullOrEmpty);
             }
 
-            var mappedForecast = _mapper.Map<WeatherResponseDataDto>(forecastResult.Value);
+            var mappedForecast = _mapper.Map<WeatherClientResponseDataDto>(forecastResult.Value);
 
             return mappedForecast.WeatherForecastDataDto.ToList();
         }

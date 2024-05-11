@@ -4,6 +4,6 @@ namespace Weather.BLL.Services.IService
 {
     public interface IWeatherService
     {
-        List<WeatherResponseDto> GetWeatherForecast(string location, string unit);
+        List<WeatherClientResponseDto> GetWeatherForecast(string location, string unit);
     }
 }

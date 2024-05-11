@@ -20,4 +20,18 @@
         public decimal Speed { get; set; }
         public int Direction { get; set; }
     }
+
+
+    //public class CityDto
+    //{
+    //    public string Name { get; set; }
+
+    //    public CoordDto Coord { get; set; }
+    //}
+
+    //public class CoordDto
+    //{
+    //    public decimal Lat { get; set; }
+    //    public decimal Lon { get; set; }
+    //}
 }
