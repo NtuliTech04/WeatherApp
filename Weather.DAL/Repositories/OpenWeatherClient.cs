@@ -74,10 +74,17 @@ namespace Weather.DAL.Repositories
 
         private string BuildOpenWeatherUrl(string location, string unit)
         {
-            return $"https://api.openweathermap.org/data/2.5/forecast" +
-                   $"?appid={_openWeatherConfig.ApiKey}" +
-                   $"&q={location}" +
+            return $"https://api.openweathermap.org/data/2.5/forecast?q=" +
+                   $"{location}," +
+                   $"{"za"}" +
+                   $"&appid={_openWeatherConfig.ApiKey}" +
                    $"&units={unit}";
+                    
+                  
+                   //$"https://api.openweathermap.org/data/2.5/forecast" +
+                   //$"?appid={_openWeatherConfig.ApiKey}" +
+                   //$"&q={location}" +
+                   //$"&units={unit}";
         }
     }
 }

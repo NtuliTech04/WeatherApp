@@ -1,0 +1,32 @@
+  <nav class="toolbar" role="banner">
+    <a [href]="baseUrl">
+        <img width="37" alt="logo" src="./../assets/Images/logo.png"/>
+        <div class="site-title">{{ title }}</div>
+    </a>
+    <div class="toolbar-location-search">
+      <!--Add Component Here-->
+    </div>
+</nav>
+
+<main class="content" role="main">
+    <!--Gets and displays current forecast based on input location-->
+    <section class="forecast-container current-weather">
+        <div class="current-forecast-title">
+            <h2>Current Weather</h2>
+        </div>
+        <!-- Add Component Here -->
+    </section>
+    <!--//-->
+    <!--Gets and displays five days weather forecast with min & low temperatures-->
+    <section class="forecast-container fivedays-weather">
+      <div class="daily-forecast-titile">
+        <h2><span>5</span> Days Forecast</h2>
+      </div>
+      <!-- <app-forecast-carousel [data]="#">
+        <ng-template let-item>
+          Add Component Here
+        </ng-template>
+      </app-forecast-carousel>  -->
+    </section>
+</main>
+

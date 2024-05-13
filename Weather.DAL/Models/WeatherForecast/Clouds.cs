@@ -1,4 +1,4 @@
-﻿namespace Weather.DAL.Models
+﻿namespace Weather.DAL.Models.WeatherForecast
 {
     public class Clouds
     {

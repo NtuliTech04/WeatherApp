@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using Weather.DAL.Models;
+using Weather.DAL.Models.WeatherForecast;
 
 namespace Weather.DAL.Data.WeatherClientResponse
 {
@@ -9,7 +9,7 @@ namespace Weather.DAL.Data.WeatherClientResponse
         public int dt { get; set; }
 
         [JsonPropertyName("weather")]
-        public IReadOnlyCollection<Models.Weather> Weather { get; init; } = new List<Models.Weather>();
+        public IReadOnlyCollection<Models.WeatherForecast.Weather> Weather { get; init; } = new List<Models.WeatherForecast.Weather>();
 
         [JsonPropertyName("main")]
         public Main Main { get; set; }
