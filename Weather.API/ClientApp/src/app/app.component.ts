@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Weather Forecast';
 
+  debug = true;
+
+  isLoading = false;
   baseUrl: string;
 
   constructor(){
