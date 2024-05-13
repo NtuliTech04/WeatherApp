@@ -1,7 +1,7 @@
 # Weather Forecast Application
 ### C# and Angular Developer Task
 
-## Project Setup - C# .NET Core
+## Project Setup - C# .NET Core 8
 
 ### Secret Keys
 
