@@ -1,7 +1,7 @@
 # Weather Forecast Application
 ### C# and Angular Developer Task
 
-## Project Setup
+## Project Setup - C# .NET Core
 
 ### Secret Keys
 
@@ -13,6 +13,19 @@ _Run this command:_ dotnet user-secrets set "OpenWeather:ApiKey" "3170828032193b
 
 * NB: This command will save and setup the Open Weather Maps API Key to the project.
 
+## Angular 15 - Client Application
+
+__NB: Open ClientApp on VS Code__
+
+### Installation Guid
+
+__On VS Code terminal: Run command -__ "npm install"
+
+The above command will install all required node_modules/angular_packages.
+
+### Run Application
+
+__To start ClientApp, Run command:__ "ng serve -o"
 
 
  
