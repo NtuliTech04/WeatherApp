@@ -120,6 +120,9 @@
   <data name="GeneralError" xml:space="preserve">
     <value>An error occurred while processing the request</value>
   </data>
+  <data name="GetDataFailed_InvalidCount" xml:space="preserve">
+    <value>Can't retrieve data properly from external service. Not expected data. Invalid Count: {0}</value>
+  </data>
   <data name="GetDataFailed_NullOrEmpty" xml:space="preserve">
     <value>Can't retrieve data properly from external service. Data are empty or null</value>
   </data>

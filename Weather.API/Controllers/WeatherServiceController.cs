@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Weather.BLL.DTOs;
-using Weather.BLL.Services.IService;
 using Weather.BLL.Utilities.Exceptions;
 using Weather.BLL.Constants.Resources;
+using Weather.BLL.DTOs.WeatherClientResponseDTOs;
+using Weather.BLL.Services.IService;
+using Weather.BLL.DTOs.CurrentForecastDtos;
 
 namespace Weather.API.Controllers
 {
@@ -11,20 +12,35 @@ namespace Weather.API.Controllers
     public class WeatherServiceController : ControllerBase
     {
         private readonly ILogger<WeatherServiceController> _logger;
-        private readonly IWeatherService _weatherService;
+        private readonly IWeatherForecastService _weatherService;
 
-        public WeatherServiceController(ILogger<WeatherServiceController> logger, IWeatherService weatherService)
+        public WeatherServiceController(ILogger<WeatherServiceController> logger, IWeatherForecastService weatherService)
         {
             _logger = logger;
             _weatherService = weatherService;
         }
 
-        [HttpGet, Route("weather-forecast")]
-        public async Task<ActionResult<List<WeatherClientResponseDto>>> GetForecast(string location, string unit)
+        [HttpGet, Route("current-weather")]
+        public async Task<ActionResult<CurrentForecastDto>> CurrentWeather(string location, string unit, CancellationToken cancellationToken)
         {
             try
             {
-                var forecast = _weatherService.GetWeatherForecast(location, unit);
+                var weatherNow = await _weatherService.GetCurrentForecast(location, unit, cancellationToken);
+                return await Task.Run(() => Ok(weatherNow));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"{ex}");
+                return BadRequest($"{ErrorMessages.GeneralError}:{ex}");
+            }
+        }
+
+        [HttpGet, Route("fivedays-weather")]
+        public async Task<ActionResult<List<WeatherClientResponseDto>>> FiveDaysWeather(string location, string unit, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var forecast = await _weatherService.GetFiveDayForecast(location, unit, cancellationToken);
                 return await Task.Run(() => Ok(forecast));
             }
             catch (Exception ex)

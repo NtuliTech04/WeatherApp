@@ -33,7 +33,7 @@ namespace Weather.BLL.Extensions
 
         private static void AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IWeatherService, WeatherService>();
+            services.AddTransient<IWeatherForecastService, WeatherForecastService>();
         }
 
         //Fluent Validations can be added here

@@ -5,6 +5,8 @@ namespace Weather.DAL.Abstractions
 {
     public interface IOpenWeatherClient
     {
-        Result<WeatherClientResponseData> GetFiveDayForecast(string location, string unit);
+        Task<Result<WeatherClientResponse>> CurrentForecastResponse(string location, string unit, CancellationToken cancellationToken);
+
+        Task<Result<WeatherClientResponseData>> FiveDayForecastResponse(string location, string unit, CancellationToken cancellationToken);
     }
 }

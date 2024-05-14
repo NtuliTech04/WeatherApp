@@ -7,7 +7,7 @@ namespace Weather.DAL.Data.WeatherClientResponse
         [JsonPropertyName("list")]
         public IReadOnlyCollection<WeatherClientResponse> WeatherForecastData { get; init; } = new List<WeatherClientResponse>();
     }
-
+    
     //public class WeatherClientGeoLocationResponseData
     //{
     //    [JsonPropertyName("city")]

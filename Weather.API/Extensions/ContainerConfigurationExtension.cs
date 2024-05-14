@@ -1,6 +1,4 @@
-﻿using Serilog;
-
-namespace Weather.API.Extensions
+﻿namespace Weather.API.Extensions
 {
     public static class ContainerConfigurationExtension
     {
@@ -27,13 +25,13 @@ namespace Weather.API.Extensions
         //Configure Controllers with options
         public static void Controllers(this IServiceCollection services)
         {
-            services.AddControllers().AddNewtonsoftJson()
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions
-                        .DefaultIgnoreCondition = System.Text.Json.Serialization
-                        .JsonIgnoreCondition.WhenWritingNull;
-                });
+            services.AddControllers().AddNewtonsoftJson();
+                //.AddJsonOptions(options =>
+                //{
+                //    options.JsonSerializerOptions
+                //        .DefaultIgnoreCondition = System.Text.Json.Serialization
+                //        .JsonIgnoreCondition.WhenWritingNull;
+                //});
         }
     }
 }

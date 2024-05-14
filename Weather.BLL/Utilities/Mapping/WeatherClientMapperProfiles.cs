@@ -1,28 +1,24 @@
 ﻿using AutoMapper;
+using Weather.BLL.DTOs.CurrentForecastDtos;
+using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.DAL.Data.WeatherClientResponse;
 using Weather.DAL.Models.WeatherForecast;
 
 namespace Weather.BLL.Utilities.Mapping
 {
-    public static class AutoMapperProfiles
+    public static class WeatherClientMapperProfiles
     {
         public class AutoMapperProfile : Profile
         {
             public AutoMapperProfile()
             {
-                //Maps WeatherResponse Model from DAL to WeatherResponseDto from BLL
-                CreateMap<WeatherClientResponse, Weather.BLL.DTOs.WeatherClientResponseDto>()
-                    .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => src.dt))
-                    .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.visibility))
-                    .ForMember(dest => dest.Weather, opt => opt.MapFrom(src => src.Weather));
-
                 //Maps Weather Data Model from DAL to WeatherDto from BLL
-                CreateMap<DAL.Models.WeatherForecast.Weather, Weather.BLL.DTOs.WeatherDto>()
+                CreateMap<DAL.Models.WeatherForecast.Weather, WeatherDto>()
                     .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.main))
                     .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description));
 
                 //Maps Main Model from DAL to TemperaturesDto from BLL
-                CreateMap<Main, Weather.BLL.DTOs.MainDto>()
+                CreateMap<Main, MainDto>()
                     .ForMember(dest => dest.Temp, opt => opt.MapFrom(src => src.temp))
                     .ForMember(dest => dest.FeelsLike, opt => opt.MapFrom(src => src.feels_like))
                     .ForMember(dest => dest.MinTemp, opt => opt.MapFrom(src => src.temp_min))
@@ -30,13 +26,21 @@ namespace Weather.BLL.Utilities.Mapping
                     .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.humidity));
 
                 //Maps Wind Model from DAL to WindDto from BLL
-                CreateMap<Wind, Weather.BLL.DTOs.WindDto>()
+                CreateMap<Wind, WindDto>()
                     .ForMember(dest => dest.Speed, opt => opt.MapFrom(src => src.speed))
                     .ForMember(dest => dest.Direction, opt => opt.MapFrom(src => src.deg));
 
-                //Maps WeatherAPIResponse Data Model from DAL to WeatherAPIResponse DTO from BLL
-                CreateMap<WeatherClientResponseData, Weather.BLL.DTOs.WeatherClientResponseDataDto>()
+                ////Maps WeatherAPIResponse Data Model from DAL to WeatherAPIResponse DTO from BLL
+                CreateMap<WeatherClientResponseData, WeatherClientResponseDataDto>()
                     .ForMember(dest => dest.WeatherForecastDataDto, opt => opt.MapFrom(src => src.WeatherForecastData));
+
+                //Maps WeatherResponse Model from DAL to WeatherResponseDto from BLL
+                CreateMap<WeatherClientResponse, WeatherClientResponseDto>()
+                    .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => src.dt))
+                    .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.visibility))
+                    .ForMember(dest => dest.WeatherCondition, opt => opt.MapFrom(src => src.Weather))
+                    .ForMember(dest => dest.Temperatures, opt => opt.MapFrom(src => src.Main))
+                    .ForMember(dest => dest.Wind, opt => opt.MapFrom(src => src.Wind));
 
 
                 ////Maps City Model from DAL to CityDto from BLL

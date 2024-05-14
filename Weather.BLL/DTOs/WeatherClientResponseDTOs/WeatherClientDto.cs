@@ -1,4 +1,4 @@
-﻿namespace Weather.BLL.DTOs
+﻿namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
     public class WeatherDto
     {
@@ -14,7 +14,7 @@
         public decimal MaxTemp { get; set; }
         public int Humidity { get; set; }
     }
-    
+
     public class WindDto
     {
         public decimal Speed { get; set; }

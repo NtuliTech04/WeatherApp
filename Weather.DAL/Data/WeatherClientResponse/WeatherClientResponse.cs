@@ -6,7 +6,7 @@ namespace Weather.DAL.Data.WeatherClientResponse
     public class WeatherClientResponse
     {
         [JsonPropertyName("dt")]
-        public int dt { get; set; }
+        public long dt { get; set; }
 
         [JsonPropertyName("weather")]
         public IReadOnlyCollection<Models.WeatherForecast.Weather> Weather { get; init; } = new List<Models.WeatherForecast.Weather>();

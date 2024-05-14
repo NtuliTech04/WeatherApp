@@ -70,6 +70,15 @@ namespace Weather.BLL.Constants.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Not expected data. Invalid Count: {0}.
+        /// </summary>
+        public static string GetDataFailed_InvalidCount {
+            get {
+                return ResourceManager.GetString("GetDataFailed_InvalidCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Data are empty or null.
         /// </summary>
         public static string GetDataFailed_NullOrEmpty {
