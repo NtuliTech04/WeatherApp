@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Weather.BLL.DTOs.CurrentForecastDtos;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.DAL.Data.WeatherClientResponse;
 using Weather.DAL.Models.WeatherForecast;

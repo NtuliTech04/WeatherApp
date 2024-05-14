@@ -1,6 +1,5 @@
-﻿using Weather.BLL.DTOs.CurrentForecastDtos;
+﻿using Weather.BLL.DTOs;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
-using Weather.BLL.Queries.CurrentForecast;
 
 namespace Weather.BLL.Services.IService
 {

@@ -1,4 +1,4 @@
-﻿using Weather.BLL.DTOs.CurrentForecastDtos;
+﻿using Weather.BLL.DTOs;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 
 namespace Weather.BLL.Interfaces

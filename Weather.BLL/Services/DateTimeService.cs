@@ -1,6 +1,6 @@
-﻿using NetChill.Application.Interfaces;
+﻿using Weather.BLL.Services.IService;
 
-namespace NetChill.Infrastructure.Services
+namespace Weather.BLL.Services
 {
     public class DateTimeService : IDateTimeService
     {

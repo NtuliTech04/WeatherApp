@@ -3,7 +3,7 @@ using Weather.BLL.Utilities.Exceptions;
 using Weather.BLL.Constants.Resources;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.BLL.Services.IService;
-using Weather.BLL.DTOs.CurrentForecastDtos;
+using Weather.BLL.DTOs;
 
 namespace Weather.API.Controllers
 {
@@ -11,6 +11,8 @@ namespace Weather.API.Controllers
     [ApiController]
     public class WeatherServiceController : ControllerBase
     {
+        #region Weather Service Controller Constructers
+        
         private readonly ILogger<WeatherServiceController> _logger;
         private readonly IWeatherForecastService _weatherService;
 
@@ -19,7 +21,11 @@ namespace Weather.API.Controllers
             _logger = logger;
             _weatherService = weatherService;
         }
+        
+        #endregion
 
+
+        //Get Action Method - Weather Now
         [HttpGet, Route("current-weather")]
         public async Task<ActionResult<CurrentForecastDto>> CurrentWeather(string location, string unit, CancellationToken cancellationToken)
         {
@@ -35,8 +41,11 @@ namespace Weather.API.Controllers
             }
         }
 
-        [HttpGet, Route("fivedays-weather")]
-        public async Task<ActionResult<List<WeatherClientResponseDto>>> FiveDaysWeather(string location, string unit, CancellationToken cancellationToken)
+
+
+        //Get Action Method - Five Days Forecast / 3 Hour Interval
+        [HttpGet, Route("fivedays-forecast")]
+        public async Task<ActionResult<List<WeatherClientResponseDto>>> FiveDaysForecast(string location, string unit, CancellationToken cancellationToken)
         {
             try
             {

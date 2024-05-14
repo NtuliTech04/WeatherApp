@@ -1,4 +1,4 @@
-﻿namespace NetChill.Application.Interfaces
+﻿namespace Weather.BLL.Services.IService
 {
     public interface IDateTimeService
     {

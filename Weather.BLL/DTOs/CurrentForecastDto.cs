@@ -1,4 +1,4 @@
-﻿namespace Weather.BLL.DTOs.CurrentForecastDtos
+﻿namespace Weather.BLL.DTOs
 {
     public class CurrentForecastDto
     {
