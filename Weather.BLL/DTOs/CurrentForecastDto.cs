@@ -2,7 +2,7 @@
 {
     public class CurrentForecastDto
     {
-        public int Timestamp { get; set; }
+        public long Timestamp { get; set; }
         public int Visibility { get; set; }
         public CurrentTempsDto CurrentTemps { get; set; }
         public CurrentWindDto CurrentWind { get; set; }

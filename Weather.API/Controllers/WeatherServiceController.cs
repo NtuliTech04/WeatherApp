@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Weather.BLL.Utilities.Exceptions;
 using Weather.BLL.Constants.Resources;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.BLL.Services.IService;
 using Weather.BLL.DTOs;
+using Weather.BLL.DTOs.FiveDayWeatherDTOs;
 
 namespace Weather.API.Controllers
 {
@@ -11,15 +11,17 @@ namespace Weather.API.Controllers
     [ApiController]
     public class WeatherServiceController : ControllerBase
     {
-        #region Weather Service Controller Constructers
+        #region Weather Service Controller Constructors
         
         private readonly ILogger<WeatherServiceController> _logger;
         private readonly IWeatherForecastService _weatherService;
+        private readonly ICustomWeatherService _customWeatherService;
 
-        public WeatherServiceController(ILogger<WeatherServiceController> logger, IWeatherForecastService weatherService)
+        public WeatherServiceController(ILogger<WeatherServiceController> logger, IWeatherForecastService weatherService, ICustomWeatherService customWeatherService)
         {
             _logger = logger;
             _weatherService = weatherService;
+            _customWeatherService = customWeatherService;
         }
         
         #endregion
@@ -41,11 +43,26 @@ namespace Weather.API.Controllers
             }
         }
 
+        //Get Action Method - Five Days Forecast
+        [HttpGet, Route("fivedays-forecast")]
+        public async Task<ActionResult<List<FiveDayWeatherDto>>> FiveDaysForecast(string location, string unit, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var fivedayWeather = await _customWeatherService.GetFiveDayWeather(location, unit, cancellationToken);
+                return await Task.Run(() => Ok(fivedayWeather));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"{ex}");
+                return BadRequest($"{ErrorMessages.GeneralError}:{ex}");
+            }
+        }
 
 
         //Get Action Method - Five Days Forecast / 3 Hour Interval
-        [HttpGet, Route("fivedays-forecast")]
-        public async Task<ActionResult<List<WeatherClientResponseDto>>> FiveDaysForecast(string location, string unit, CancellationToken cancellationToken)
+        [HttpGet, Route("fivedays-hourly-forecast")]
+        public async Task<ActionResult<List<WeatherClientResponseDto>>> FiveDaysHourlyForecast(string location, string unit, CancellationToken cancellationToken)
         {
             try
             {

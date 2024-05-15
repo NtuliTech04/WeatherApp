@@ -12,7 +12,6 @@ namespace Weather.BLL.Services
 {
     internal sealed class WeatherForecastService : IWeatherForecastService
     {
-
         #region Weather Forecast Service Constructors
 
         private readonly IOpenWeatherClient _openWeatherClient;
