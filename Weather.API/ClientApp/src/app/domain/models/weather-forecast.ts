@@ -1,4 +1,6 @@
-export namespace WeatherForecast {
+import { Time } from "@angular/common";
+
+ export namespace WeatherForecast {
 
   //Current three hour forecast
   export interface CurrentWeather{
@@ -26,7 +28,8 @@ export namespace WeatherForecast {
 
 
   export interface ThreeHourForecast{
-    timestamp: number; //In range of current time
+    timestamp: number;
+    timeInterval: Time;
     weatherData: WeatherCondition[];
     temperatureData: Temperatures;
     visibility: number;
@@ -35,7 +38,6 @@ export namespace WeatherForecast {
 
 
   //Base models for weather forecast
-
   export interface WeatherCondition {
     condition: string;
     description: string;

@@ -49,7 +49,7 @@ namespace Weather.API.Controllers
         {
             try
             {
-                var fivedayWeather = await _customWeatherService.GetFiveDayWeather(location, unit, cancellationToken);
+                var fivedayWeather = await _customWeatherService.FiveDayWeather(location, unit, cancellationToken);
                 return await Task.Run(() => Ok(fivedayWeather));
             }
             catch (Exception ex)

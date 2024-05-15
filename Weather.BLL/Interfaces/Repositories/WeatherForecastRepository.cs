@@ -1,5 +1,5 @@
-﻿namespace Weather.BLL.Interfaces.Repositories
-{
+﻿//namespace Weather.BLL.Interfaces.Repositories
+//{
     //public class WeatherForecastRepository : IWeatherForecastRepository
     //{
 
@@ -21,4 +21,4 @@
     //}
 
     //return currentWeather;
-}
+//}

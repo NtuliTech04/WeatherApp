@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using Weather.BLL.Interfaces;
+using Weather.BLL.Interfaces.Repositories;
 using Weather.BLL.Services;
 using Weather.BLL.Services.IService;
 using Weather.BLL.Utilities.Swagger;
@@ -17,6 +19,7 @@ namespace Weather.BLL.Extensions
         public static void RegisterBLLDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAutoMapper();
+            services.AddRepositories();
             services.AddServices();
             services.APIVersioning();
             services.AddVersionedAPI();
@@ -29,6 +32,11 @@ namespace Weather.BLL.Extensions
         {
             //services.AddAutoMapper(typeof(AutoMapperProfile));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        }
+
+        public static void AddRepositories(this IServiceCollection services)
+        {
+            services.AddTransient<ICustomWeatherRepository, CustomWeatherRepository>();
         }
 
         private static void AddServices(this IServiceCollection services)
