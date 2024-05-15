@@ -4,7 +4,7 @@ import { Time } from "@angular/common";
 
   //Current three hour forecast
   export interface CurrentWeather{
-    dateTime: Date;
+    updatedOn: Date; //Date&Time
     weatherData: WeatherCondition[];
     temperatureData: Temperatures;
     visibility: number;

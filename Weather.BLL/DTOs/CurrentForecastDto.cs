@@ -3,6 +3,7 @@
     public class CurrentForecastDto
     {
         public long Timestamp { get; set; }
+        public DateTime UpdatedOn => DateTimeOffset.FromUnixTimeSeconds(Timestamp).DateTime.ToLocalTime();
         public int Visibility { get; set; }
         public CurrentTempsDto CurrentTemps { get; set; }
         public CurrentWindDto CurrentWind { get; set; }
