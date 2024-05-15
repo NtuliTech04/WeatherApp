@@ -1,0 +1,3 @@
+22:59 [INF] DESKTOP-IR1JP40 (10) HTTP "GET" "/WeatherForecast" responded 200 in 3208.9345 ms
+23:21 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/favicon.ico" responded 404 in 92.6140 ms
+23:22 [INF] DESKTOP-IR1JP40 (14) HTTP "GET" "/WeatherForecast" responded 200 in 2703.9840 ms

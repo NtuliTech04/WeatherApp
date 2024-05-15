@@ -1,0 +1,292 @@
+00:08 [INF] DESKTOP-IR1JP40 (13) HTTP "GET" "/api/WeatherService/weather-forecast" responded 200 in 5979.5726 ms
+00:40 [INF] DESKTOP-IR1JP40 (17) HTTP "GET" "/api/WeatherService/weather-forecast" responded 200 in 2959.6032 ms
+00:50 [ERR] DESKTOP-IR1JP40 (10) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 40
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken)
+00:50 [INF] DESKTOP-IR1JP40 (10) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 43712.9640 ms
+00:51 [ERR] DESKTOP-IR1JP40 (24) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken)
+00:51 [INF] DESKTOP-IR1JP40 (24) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 19174.4815 ms
+00:53 [ERR] DESKTOP-IR1JP40 (25) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken)
+00:53 [INF] DESKTOP-IR1JP40 (25) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 21864.3112 ms
+00:53 [ERR] DESKTOP-IR1JP40 (13) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken)
+00:53 [INF] DESKTOP-IR1JP40 (13) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 18570.8768 ms
+00:56 [ERR] DESKTOP-IR1JP40 (7) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 40
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+00:56 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 88205.0373 ms
+01:13 [INF] DESKTOP-IR1JP40 (20) HTTP "GET" "/api/WeatherService/fivedays-weather" responded 200 in 30992.5465 ms
+01:16 [ERR] DESKTOP-IR1JP40 (16) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 40
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+01:16 [INF] DESKTOP-IR1JP40 (16) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 60316.9487 ms
+01:19 [ERR] DESKTOP-IR1JP40 (16) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 40
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+01:19 [INF] DESKTOP-IR1JP40 (16) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 190084.1700 ms
+01:28 [ERR] DESKTOP-IR1JP40 (10) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='Failed to deserialize response.''
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 35
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+01:28 [INF] DESKTOP-IR1JP40 (10) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 206409.3173 ms
+01:29 [ERR] DESKTOP-IR1JP40 (10) Weather.BLL.Utilities.Exceptions.NotFoundException: Can't retrieve data properly from external service. Data are empty or null
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 40
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+01:29 [INF] DESKTOP-IR1JP40 (10) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 54727.6882 ms
+08:04 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/fivedays-weather" responded 200 in 49524.5062 ms
+08:29 [ERR] DESKTOP-IR1JP40 (7) AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Result`1 -> CurrentForecastDto
+FluentResults.Result`1[[Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse, Weather.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 48
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+08:29 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 632516.8229 ms
+08:47 [ERR] DESKTOP-IR1JP40 (7) AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Type Map configuration:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Destination Member:
+CurrentWeather
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Weather -> CurrentWeatherDto
+Weather.DAL.Models.WeatherForecast.Weather -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentWeatherDto
+   at lambda_method12(Closure, Weather, CurrentWeatherDto, ResolutionContext)
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 48
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+08:47 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 4363.4712 ms
+08:50 [ERR] DESKTOP-IR1JP40 (9) AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Type Map configuration:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Destination Member:
+CurrentWeather
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Weather -> CurrentWeatherDto
+Weather.DAL.Models.WeatherForecast.Weather -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentWeatherDto
+   at lambda_method12(Closure, Weather, CurrentWeatherDto, ResolutionContext)
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+08:50 [INF] DESKTOP-IR1JP40 (9) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 1340.7947 ms
+08:54 [ERR] DESKTOP-IR1JP40 (17) AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Type Map configuration:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Destination Member:
+CurrentWeather
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Weather -> CurrentWeatherDto
+Weather.DAL.Models.WeatherForecast.Weather -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentWeatherDto
+   at lambda_method12(Closure, Weather, CurrentWeatherDto, ResolutionContext)
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+08:54 [INF] DESKTOP-IR1JP40 (17) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 1391.8803 ms
+08:55 [ERR] DESKTOP-IR1JP40 (10) AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Type Map configuration:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Destination Member:
+CurrentTemps
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Main -> CurrentTempsDto
+Weather.DAL.Models.WeatherForecast.Main -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentTempsDto
+
+Destination Member:
+CurrentTemps
+
+   at lambda_method12(Closure, Main, CurrentTempsDto, ResolutionContext)
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 48
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+08:55 [INF] DESKTOP-IR1JP40 (10) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 2882.9577 ms
+08:57 [INF] DESKTOP-IR1JP40 (9) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 14860.8962 ms
+08:58 [ERR] DESKTOP-IR1JP40 (10) AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Type Map configuration:
+WeatherClientResponse -> CurrentForecastDto
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponse -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentForecastDto
+
+Destination Member:
+CurrentTemps
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Main -> CurrentTempsDto
+Weather.DAL.Models.WeatherForecast.Main -> Weather.BLL.DTOs.CurrentForecastDtos.CurrentTempsDto
+
+Destination Member:
+CurrentTemps
+
+   at lambda_method12(Closure, Main, CurrentTempsDto, ResolutionContext)
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method11(Closure, Object, CurrentForecastDto, ResolutionContext)
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 48
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 28
+08:58 [INF] DESKTOP-IR1JP40 (10) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 2675.7478 ms
+09:07 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 37437.7513 ms
+09:07 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/fivedays-weather" responded 200 in 1374.9874 ms
+09:22 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 5057.0890 ms
+09:23 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 200 in 1403.4053 ms
+09:24 [ERR] DESKTOP-IR1JP40 (17) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='Failed response to SendAsync''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 51
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:24 [INF] DESKTOP-IR1JP40 (17) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 1571.2111 ms
+09:27 [ERR] DESKTOP-IR1JP40 (24) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='Failed response to SendAsync''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 51
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:27 [INF] DESKTOP-IR1JP40 (24) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 73068.9144 ms
+09:28 [ERR] DESKTOP-IR1JP40 (24) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='No such host is known. (api.openweathermap.org:443)''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 51
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:28 [INF] DESKTOP-IR1JP40 (24) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 18946.5357 ms
+09:35 [ERR] DESKTOP-IR1JP40 (7) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='No such host is known. (api.openweathermap.org:443)''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 59
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:35 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 39545.4208 ms
+09:36 [ERR] DESKTOP-IR1JP40 (7) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='No such host is known. (api.openweathermap.org:443)''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:36 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 13425.5344 ms
+09:40 [ERR] DESKTOP-IR1JP40 (18) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.openweathermap.org:443)''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:40 [INF] DESKTOP-IR1JP40 (18) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 107810.1874 ms
+09:41 [ERR] DESKTOP-IR1JP40 (12) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.openweathermap.org:443)''
+   at Weather.BLL.Services.WeatherForecastService.GetFiveDayForecast(String location, String unit, CancellationToken cancellationToken)
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+09:41 [INF] DESKTOP-IR1JP40 (12) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 43107.8574 ms
+09:47 [ERR] DESKTOP-IR1JP40 (7) Weather.BLL.Utilities.Exceptions.BadRequestException: Result: IsSuccess='False', Reasons='Error with Message='A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. (api.openweathermap.org:443)''
+   at Weather.BLL.Services.WeatherForecastService.GetCurrentForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\WeatherForecastService.cs:line 34
+   at Weather.API.Controllers.WeatherServiceController.CurrentWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 34
+09:47 [INF] DESKTOP-IR1JP40 (7) HTTP "GET" "/api/WeatherService/current-weather" responded 400 in 22963.6369 ms
+09:47 [INF] DESKTOP-IR1JP40 (16) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 2337.0578 ms
+09:47 [INF] DESKTOP-IR1JP40 (17) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 1078.3883 ms
+09:47 [INF] DESKTOP-IR1JP40 (19) HTTP "GET" "/favicon.ico" responded 404 in 9.4435 ms
+09:48 [INF] DESKTOP-IR1JP40 (16) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 200 in 748.9350 ms
+23:51 [ERR] DESKTOP-IR1JP40 (11) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 500 in 1086.1371 ms
+System.InvalidOperationException: Unable to resolve service for type 'Weather.BLL.Services.IService.ICustomWeatherService' while attempting to activate 'Weather.API.Controllers.WeatherServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+23:51 [ERR] DESKTOP-IR1JP40 (11) An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Weather.BLL.Services.IService.ICustomWeatherService' while attempting to activate 'Weather.API.Controllers.WeatherServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+23:54 [ERR] DESKTOP-IR1JP40 (9) HTTP "GET" "/api/WeatherService/current-weather" responded 500 in 297.9524 ms
+System.InvalidOperationException: Unable to resolve service for type 'Weather.BLL.Services.IService.ICustomWeatherService' while attempting to activate 'Weather.API.Controllers.WeatherServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+23:54 [ERR] DESKTOP-IR1JP40 (9) An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Weather.BLL.Services.IService.ICustomWeatherService' while attempting to activate 'Weather.API.Controllers.WeatherServiceController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+23:57 [ERR] DESKTOP-IR1JP40 (5) AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+WeatherClientResponseData -> List`1
+Weather.DAL.Data.WeatherClientResponse.WeatherClientResponseData -> System.Collections.Generic.List`1[[Weather.BLL.DTOs.FiveDayWeatherDto, Weather.BLL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method11(Closure, Object, List`1, ResolutionContext)
+   at Weather.BLL.Services.CustomWeatherService.GetFiveDayWeather(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.BLL\Services\CustomWeatherService.cs:line 28
+   at Weather.API.Controllers.WeatherServiceController.FiveDaysForecast(String location, String unit, CancellationToken cancellationToken) in D:\Job Assessments\Bitcube Development Task\WeatherApp\Weather.API\Controllers\WeatherServiceController.cs:line 52
+23:57 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 400 in 3682.1218 ms
