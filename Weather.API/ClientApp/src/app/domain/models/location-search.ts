@@ -1,3 +1,21 @@
+export namespace LocationSearch{
+
+  export interface Options {
+    ipAddress?: string;
+    searchQuery?: string;
+    latitude?: number;
+    longitude?: number;
+  }
+
+  export enum SearchType {
+    IP,
+    SearchQuery,
+    GPS
+  }
+
+}
+
+
 export namespace UrlOptions {
 
   enum Provinces {
@@ -124,3 +142,4 @@ export namespace UrlOptions {
     Imperial
   }
 }
+

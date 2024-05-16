@@ -268,3 +268,11 @@ System.Collections.Generic.List`1[[Weather.BLL.DTOs.WeatherClientResponseDTOs.We
 12:33 [INF] DESKTOP-IR1JP40 (9) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 551.3538 ms
 12:34 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/fivedays-hourly-forecast" responded 200 in 3913.4184 ms
 12:35 [INF] DESKTOP-IR1JP40 (18) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 200 in 569.7635 ms
+13:03 [INF] DESKTOP-IR1JP40 (5) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 4754.0841 ms
+14:00 [INF] DESKTOP-IR1JP40 (19) HTTP "GET" "/api/WeatherService/current-weather" responded 200 in 3558.1953 ms
+14:01 [INF] DESKTOP-IR1JP40 (18) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 200 in 4021.4536 ms
+19:44 [INF] DESKTOP-IR1JP40 (11) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 200 in 7329.5813 ms
+19:44 [INF] DESKTOP-IR1JP40 (18) HTTP "GET" "/api/WeatherService/fivedays-forecast" responded 200 in 916.4412 ms
+19:44 [INF] DESKTOP-IR1JP40 (18) HTTP "GET" "/favicon.ico" responded 404 in 30.5517 ms
+19:45 [INF] DESKTOP-IR1JP40 (14) HTTP "GET" "/api/WeatherService/current" responded 200 in 506.8423 ms
+19:46 [INF] DESKTOP-IR1JP40 (11) HTTP "GET" "/api/WeatherService/current" responded 200 in 2070.2608 ms

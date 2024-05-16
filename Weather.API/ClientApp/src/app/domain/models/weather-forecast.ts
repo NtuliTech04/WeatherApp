@@ -9,30 +9,32 @@ import { Time } from "@angular/common";
     temperatureData: Temperatures;
     visibility: number;
     windData: Wind;
+    locationData: GeoLocation;
   }
 
 
-  //Five days max & min forecast
+  //Five days max, min, & humidity forecast
   export interface FiveDayForecast{
-    fiveDayForecastData: DayHourlyForecast[];
+    fiveDayForecastData: DailyWeatherForecast[];
+    locationData: GeoLocation;
   }
 
+  //Daily forecast
+  export interface DailyWeatherForecast {
+    timestamp: number;
+    date: Date;
+    minDayTemp: number;
+    maxDatTemp: number;
+    humidity: number;
+  }
 
   //Three hour interval forecast for one day
-  export interface DayHourlyForecast {
-    date: Date;
-    minTemp: number;
-    maxTemp: number;
-    dailyForecastData: ThreeHourForecast[];
-  }
-
-
   export interface ThreeHourForecast{
     timestamp: number;
     timeInterval: Time;
+    visibility: number;
     weatherData: WeatherCondition[];
     temperatureData: Temperatures;
-    visibility: number;
     windData: Wind;
   }
 
@@ -54,5 +56,12 @@ import { Time } from "@angular/common";
   export interface Wind {
     speed: number;
     direction: number;
+  }
+
+  export interface GeoLocation {
+    lat: number;
+    lon: number;
+    cityName: string;
+    country: string
   }
 }

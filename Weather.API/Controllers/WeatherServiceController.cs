@@ -28,7 +28,7 @@ namespace Weather.API.Controllers
 
 
         //Get Action Method - Weather Now
-        [HttpGet, Route("current-weather")]
+        [HttpGet, Route("current")]
         public async Task<ActionResult<CurrentForecastDto>> CurrentWeather(string location, string unit, CancellationToken cancellationToken)
         {
             try
