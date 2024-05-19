@@ -9,5 +9,11 @@ export const environment = {
    * Positionstack API
    */
   baseStackUrl: 'http://api.positionstack.com/v1',
-  key:  "a9f50ed4b2ce51140aeb1bd371dadfc2"
+  key:  "a9f50ed4b2ce51140aeb1bd371dadfc2",
+
+  /**
+   * Open Weather Icons API
+   */
+  openWeatherIcons: 'https://openweathermap.org/img/wn'
+
 };

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Weather.DAL.Models.GeoArea;
 
 namespace Weather.DAL.Data.WeatherClientResponse
 {
@@ -6,11 +7,8 @@ namespace Weather.DAL.Data.WeatherClientResponse
     {
         [JsonPropertyName("list")]
         public IReadOnlyCollection<WeatherClientResponse> WeatherForecastData { get; init; } = new List<WeatherClientResponse>();
+
+        [JsonPropertyName("city")]
+        public City LocationData { get; set; }
     }
-    
-    //public class WeatherClientGeoLocationResponseData
-    //{
-    //    [JsonPropertyName("city")]
-    //    public WeatherClientResponse GeoLocationData { get; init; } = new WeatherClientResponse();
-    //}
 }

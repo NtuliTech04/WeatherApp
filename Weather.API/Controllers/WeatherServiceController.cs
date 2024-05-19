@@ -2,8 +2,8 @@
 using Weather.BLL.Constants.Resources;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.BLL.Services.IService;
-using Weather.BLL.DTOs;
 using Weather.BLL.DTOs.FiveDayWeatherDTOs;
+using Weather.BLL.DTOs.CurrentForecastDTOs;
 
 namespace Weather.API.Controllers
 {

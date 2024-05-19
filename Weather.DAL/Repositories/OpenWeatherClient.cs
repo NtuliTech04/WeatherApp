@@ -6,6 +6,7 @@ using Ardalis.GuardClauses;
 using FluentResults;
 using System.Text.Json;
 using Weather.DAL.Data.WeatherClientResponse;
+using Weather.DAL.Data.CurrentWeatherResponse;
 
 namespace Weather.DAL.Repositories
 {
@@ -27,7 +28,7 @@ namespace Weather.DAL.Repositories
 
         #endregion
 
-        public async Task<Result<WeatherClientResponse>> CurrentForecastResponse(string location, string unit, CancellationToken cancellationToken)
+        public async Task<Result<CurrentWeatherResponse>> CurrentForecastResponse(string location, string unit, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage
             {
@@ -35,7 +36,7 @@ namespace Weather.DAL.Repositories
                 RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.weather.ToString(), location, unit))
             };
 
-            var currentWeatherResults = await SendSaveAsync<WeatherClientResponse>(request, cancellationToken);
+            var currentWeatherResults = await SendSaveAsync<CurrentWeatherResponse>(request, cancellationToken);
 
             return currentWeatherResults;
         }

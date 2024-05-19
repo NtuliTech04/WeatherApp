@@ -1,28 +1,30 @@
 import { Time } from "@angular/common";
+import { environment } from "src/environments/environment";
 
  export namespace WeatherForecast {
 
   //Current three hour forecast
   export interface CurrentWeather{
-    updatedOn: Date; //Date&Time
-    weatherData: WeatherCondition[];
-    temperatureData: Temperatures;
+    timestamp: number;
+    lastUpdated: Date; //Date&Time
     visibility: number;
-    windData: Wind;
-    locationData: GeoLocation;
+    currentTemps: Temperatures;
+    currentWind: Wind;
+    currentWeather: WeatherCondition;
+    // locationData: GeoLocation;
   }
 
 
   //Five days max, min, & humidity forecast
   export interface FiveDayForecast{
     fiveDayForecastData: DailyWeatherForecast[];
-    locationData: GeoLocation;
+    // locationData: GeoLocation;
   }
 
   //Daily forecast
   export interface DailyWeatherForecast {
     timestamp: number;
-    date: Date;
+    weatherDate: Date;
     minDayTemp: number;
     maxDatTemp: number;
     humidity: number;
@@ -33,7 +35,7 @@ import { Time } from "@angular/common";
     timestamp: number;
     timeInterval: Time;
     visibility: number;
-    weatherData: WeatherCondition[];
+    weatherData: WeatherCondition;
     temperatureData: Temperatures;
     windData: Wind;
   }
@@ -43,6 +45,7 @@ import { Time } from "@angular/common";
   export interface WeatherCondition {
     condition: string;
     description: string;
+    icon: string;
   }
 
   export interface Temperatures {
@@ -62,6 +65,14 @@ import { Time } from "@angular/common";
     lat: number;
     lon: number;
     cityName: string;
+    sunrise: number,
+    sunset: number,
+    timezone: number,
     country: string
+  }
+
+
+  export function getForcastImgSrc(icon: string) {
+    return `${environment.openWeatherIcons}/${icon}@2x.png`;
   }
 }

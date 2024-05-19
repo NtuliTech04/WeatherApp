@@ -1,4 +1,4 @@
-﻿namespace Weather.BLL.DTOs
+﻿namespace Weather.BLL.DTOs.DayHourlyForecast
 {
     public class DayHourlyForecast
     {

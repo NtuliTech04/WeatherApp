@@ -19,7 +19,6 @@ export class ForecastLocationSearchComponent implements OnInit {
   searchQuery!: string;
 
   @Input()
-  //showQuerySearch!: boolean;
   showQuerySearch: boolean = true;
 
   @Output('searchLocation')
@@ -34,7 +33,7 @@ export class ForecastLocationSearchComponent implements OnInit {
         searchQuery: '',
         latitude: -1,
         longitude: -1,
-        type: undefined, //-1
+        type: undefined
     };
     return eventData;
   }

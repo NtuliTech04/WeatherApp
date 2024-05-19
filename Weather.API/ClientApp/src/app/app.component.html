@@ -4,7 +4,10 @@
         <div class="site-title">{{ title }}</div>
     </a>
     <div class="toolbar-location-search">
-      <app-forecast-location-search></app-forecast-location-search>
+      <app-forecast-location-search
+        (searchLocation)="onSearchLocation($event)"
+        [showQuerySearch]="locationAPIAvailable">
+      </app-forecast-location-search>
     </div>
 </nav>
 
@@ -24,12 +27,19 @@
   <ng-template #notLoading>
     <!--Gets and displays current forecast based on input location-->
     <section class="forecast-container current-weather">
+      <app-forecast-location *ngIf="dataStore.getCurrentForecastLocation()"
+        [location]="dataStore.getCurrentForecastLocation()">
+      </app-forecast-location>
       <div class="current-forecast-title">
           <h2>Current Weather</h2>
       </div>
-      <!-- Add Component Here -->
+      <app-current-forecast *ngIf="dataStore.getCurrentForecast()"
+        [forecast]="dataStore.getCurrentForecast()">
+      </app-current-forecast>
     </section>
     <!--//-->
+
+
   <!--Gets and displays five days weather forecast with min & low temperatures-->
   <section class="forecast-container fivedays-weather">
     <div class="daily-forecast-titile">

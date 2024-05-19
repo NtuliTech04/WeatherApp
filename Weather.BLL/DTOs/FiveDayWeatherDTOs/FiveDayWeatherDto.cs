@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Newtonsoft.Json;
 
 namespace Weather.BLL.DTOs.FiveDayWeatherDTOs
 {
@@ -8,33 +8,11 @@ namespace Weather.BLL.DTOs.FiveDayWeatherDTOs
         public DateTime WeatherDate { get; set; }
         public decimal MinDayTemp { get; set; }
         public decimal MaxDayTemp { get; set; }
+        public int Humidity => FiveDayTemps.Humidity;
+        public FiveDayWeatherConditionDto WeatherCondition { get; set; }
+
+        [JsonIgnore]
         public FiveDayTempsDto FiveDayTemps { get; set; }
-
-
-        //public FiveDayWindDto FiveDayWind { get; set; }
-        //public IReadOnlyCollection<FiveDayWeatherDto> FiveDayWeather { get; init; } = new List<FiveDayWeatherDto>();
-    }
-
-
-    public class FiveDayWeatherConditionDto
-    {
-        public string Condition { get; set; }
-        public string Description { get; set; }
-    }
-
-    public class FiveDayTempsDto
-    {
-        public decimal Temp { get; set; }
-        //public decimal FeelsLike { get; set; }
-        //public decimal MinTemp { get; set; }
-        //public decimal MaxTemp { get; set; }
-        public int Humidity { get; set; }
-    }
-
-    public class FiveDayWindDto
-    {
-        public decimal Speed { get; set; }
-        public int Direction { get; set; }
     }
 }
 

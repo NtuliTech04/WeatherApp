@@ -6,7 +6,13 @@ namespace Weather.DAL.Models.GeoArea
     {
         public int id { get; set; }
         public string name { get; set; }
+
+        [JsonPropertyName("coord")]
         public Coord coord { get; set; }
+        public string country { get; set; }
+        public long timezone { get; set; }
+        public long sunrise { get; set; }
+        public long sunset { get; set; }
     }
 
     public class Coord

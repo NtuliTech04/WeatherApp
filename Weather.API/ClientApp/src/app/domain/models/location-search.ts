@@ -5,6 +5,7 @@ export namespace LocationSearch{
     searchQuery?: string;
     latitude?: number;
     longitude?: number;
+    locality?: string;
   }
 
   export enum SearchType {
@@ -12,11 +13,16 @@ export namespace LocationSearch{
     SearchQuery,
     GPS
   }
-
 }
 
-
 export namespace UrlOptions {
+
+  //Measurement units
+  export enum Unit {
+    Metric = "Metric",
+    Kelvin = "Kelvin",
+    Imperial = "Imperial"
+  }
 
   enum Provinces {
     EasternCape = "Eastern Cape",
@@ -134,12 +140,5 @@ export namespace UrlOptions {
         "Worcester"
       ],
   };
-
-  //Measurement units
-  export enum Unit {
-    Metric,
-    Kelvin,
-    Imperial
-  }
 }
 

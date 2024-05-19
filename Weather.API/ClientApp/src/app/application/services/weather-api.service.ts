@@ -22,37 +22,54 @@ export class WeatherAPIService {
  */
 
   async getWeatherForecast(location: string, unit: string) {
-    //Current forecast
-    let current = await firstValueFrom(this.getCurrentForecast(location, unit));
-      console.log(current);
+    //Current Weather
+    let currentWeather = await firstValueFrom(this.getCurrentForecast(location, unit));
+      console.log(currentWeather);
     //Null handling
-    if (current.count == 0 || current.data.length == 0) {
+    if (currentWeather == null) {
       throw new RuntimeError.ForecastError(`No Current Weather results returned for this city: ${location}`);
     }
     //Five days forecast
     let daily = await firstValueFrom(this.getFiveDayWeather(location, unit));
 
     return {
-      current: current[0], //might have to remove [0]
-      daily: daily.fiveDayForecastData
+      current: currentWeather,
+      nextFivedays: daily
     };
   }
 
 
-  getCurrentForecast(location: string, unit: string): Observable<any> {
+  // getCurrentForecast(location: string, unit: string): Observable<any> {
+  //   let url = `${this.URL}/WeatherService/current?location=${location}&unit=${unit}`;
+  //   return this.http.get(url, { headers: this.headers }).pipe(
+  //     map((res: Response) => {
+  //       return res || {};
+  //     }),
+  //     catchError(this.errorHandler)
+  //   );
+  // }
+  getCurrentForecast(location: string, unit: string): Observable<WeatherForecast.CurrentWeather> {
     let url = `${this.URL}/WeatherService/current?location=${location}&unit=${unit}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
+    return this.http.get<WeatherForecast.CurrentWeather>(url, { headers: this.headers }).pipe(
+      map((response: WeatherForecast.CurrentWeather) => {
+        return response ;
       }),
       catchError(this.errorHandler)
     );
   }
 
-
+  // getFiveDayWeather(location: string, unit: string): Observable<WeatherForecast.FiveDayForecast> {
+  //   let url = `${this.URL}/WeatherService/fivedays-forecast?location=${location}&unit=${unit}`;
+  //   return this.http.get<WeatherForecast.FiveDayForecast>(url);
+  // }
   getFiveDayWeather(location: string, unit: string): Observable<WeatherForecast.FiveDayForecast> {
     let url = `${this.URL}/WeatherService/fivedays-forecast?location=${location}&unit=${unit}`;
-    return this.http.get<WeatherForecast.FiveDayForecast>(url);
+    return this.http.get<WeatherForecast.FiveDayForecast>(url, { headers: this.headers }).pipe(
+      map((response: WeatherForecast.FiveDayForecast) => {
+        return response;
+      }),
+      catchError(this.errorHandler)
+    );
   }
 
 

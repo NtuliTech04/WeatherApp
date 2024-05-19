@@ -6,11 +6,13 @@ namespace Weather.DAL.Data.WeatherClientResponse
     public class WeatherClientResponse
     {
         [JsonPropertyName("dt")]
-        public long dt { get; set; }
+        public long Dt { get; set; }
 
         [JsonPropertyName("weather")]
-        public IReadOnlyCollection<Models.WeatherForecast.Weather> Weather { get; init; } = new List<Models.WeatherForecast.Weather>();
+        public List<Models.WeatherForecast.Weather> Weather { get; init; } = new List<Models.WeatherForecast.Weather>();
 
+        public Models.WeatherForecast.Weather WeatherCondition => Weather.First();
+        
         [JsonPropertyName("main")]
         public Main Main { get; set; }
 
@@ -21,12 +23,6 @@ namespace Weather.DAL.Data.WeatherClientResponse
         public Wind Wind { get; set; }
 
         [JsonPropertyName("visibility")]
-        public int visibility { get; set; }
+        public int Visibility { get; set; }
     }
-
-    //public class WeatherClientGeoLocationResponse
-    //{
-    //    [JsonPropertyName("city")]
-    //    public City City { get; set; }
-    //}
 }

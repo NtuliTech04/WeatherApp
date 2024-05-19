@@ -1,1 +1,43 @@
-<p>current-forecast works!</p>
+<div>
+  <section class="current-forecast-container">
+    <div class="outside time">{{localDate}}</div>
+    <img class="weather-icon" [src]="getForecastImgSrc()" alt="forecast" />
+    <div class="temp-container">
+      <div class="temp">
+          {{ forecast.currentTemps }}°
+      </div>
+      <div class="temp-scale">{{"C"}}</div>
+      <div class="real-feel">
+          Feels Like {{ forecast.currentTemps.feelsLike }}°
+      </div>
+    </div>
+    <div class="outside">
+      {{ getTimeOfDay() }} - {{ getOutsideDescription() }}
+    </div>
+    <div class="outside">
+      {{ forecast.currentWeather.condition }} - {{ forecast.currentWeather.description }}
+    </div>
+  </section>
+  <section class="current-forecast-details-container">
+    <!-- <div class="details-row" *ngIf="forecast.locationData.sunrise && forecast.locationData.sunset">
+      <span> Sunrise /  Sunset</span>
+      <span class="details-value">{{ getLocalSunrise() }} / {{ getLocalSunset() }}</span>
+    </div> -->
+    <div class="details-row">
+      <span>Humidity</span>
+      <span class="details-value">{{ forecast.currentTemps.humidity }}%</span>
+    </div>
+    <div class="details-row">
+      <span>Wind Speed / Direction</span>
+      <span class="details-value">{{ forecast.currentWind.speed }} km/h / {{ forecast.currentWind.direction }}</span>
+    </div>
+    <!-- <div class="details-row">
+      <span> Latitude /  Longitude</span>
+      <span class="details-value">{{ forecast.locationData.lat }} / {{ forecast.locationData.lon }}</span>
+    </div> -->
+    <div class="details-row" *ngIf="forecast.lastUpdated">
+      <span>Last Updated</span>
+      <span class="details-value">{{ getLastUpdated() }}</span>
+    </div>
+  </section>
+</div>

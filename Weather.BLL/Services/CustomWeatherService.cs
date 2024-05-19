@@ -26,7 +26,7 @@ namespace Weather.BLL.Services
         public async Task<List<FiveDayWeatherDto>> FiveDayWeather(string location, string unit, CancellationToken cancellationToken)
         {
             var forecastResult = await _forecastService.GetFiveDayForecast(location, unit, cancellationToken);
-            var forecastList = _mapper.Map<List<FiveDayWeatherDto>>(forecastResult);
+            var forecastList = _mapper.Map<List<FiveDayWeatherDto>>(forecastResult.WeatherForecastDataDto);
 
             //Convert timestamps and assign result to date 
             foreach (var forecast in forecastList)
