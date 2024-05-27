@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+* Free Font Awesome Import
+*/
+@import 'node_modules/@fortawesome/fontawesome-free/css/all.css';
+
+html,
+body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { background-image: url("assets/Images/background.jpg");
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.details-row {
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 0;
+  justify-content: space-between;
+  line-height: 1.33;
+  font-weight: bold;
+}
+.details-value {
+  opacity: 0.5;
+}

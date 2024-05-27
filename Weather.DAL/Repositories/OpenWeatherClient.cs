@@ -7,14 +7,13 @@ using FluentResults;
 using System.Text.Json;
 using Weather.DAL.Data.WeatherClientResponse;
 using Weather.DAL.Data.CurrentWeatherResponse;
+using Weather.BLL.Constants.Enums;
 
 namespace Weather.DAL.Repositories
 {
     internal sealed class OpenWeatherClient : IOpenWeatherClient
     {
         #region Open Weather Client Constructors
-
-        private enum WeatherResource { weather, forecast }
 
         private readonly HttpClient _httpClient;
         private readonly OpenWeather _openWeatherConfig;
@@ -28,33 +27,43 @@ namespace Weather.DAL.Repositories
 
         #endregion
 
+        //Gets the current forecast from the weather API
         public async Task<Result<CurrentWeatherResponse>> CurrentForecastResponse(string location, string unit, CancellationToken cancellationToken)
         {
+            //Creates a new instance of an http request message class and initializes its properties 
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
                 RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.weather.ToString(), location, unit))
             };
 
-            var currentWeatherResults = await SendSaveAsync<CurrentWeatherResponse>(request, cancellationToken);
+
+            //Sends the new instance of http request message to the handling method
+            var currentWeatherResults = await SendRequestAsync<CurrentWeatherResponse>(request, cancellationToken);
 
             return currentWeatherResults;
         }
 
+        //Gets a five day/3 hourly forecast from the weather API
         public async Task<Result<WeatherClientResponseData>> FiveDayForecastResponse(string location, string unit, CancellationToken cancellationToken)
         {
+            //Creates a new instance of an http request message class and initializes its properties 
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
                 RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.forecast.ToString(), location, unit))
             };
 
-            var fiveDayWeatherResults = await SendSaveAsync<WeatherClientResponseData>(request, cancellationToken);
+            //Sends the new instance of http request message to the handling method
+            var fiveDayWeatherResults = await SendRequestAsync<WeatherClientResponseData>(request, cancellationToken);
 
             return fiveDayWeatherResults;
         }
 
-        private async Task<Result<T>> SendSaveAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken )
+
+
+        //Exception handler when sending http request messages
+        private async Task<Result<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken )
         {
             try
             {
@@ -66,8 +75,10 @@ namespace Weather.DAL.Repositories
             }
         }
 
+        //Sends http requests to the weather service API and deserializes the response/result
         private async Task<Result<T>> SendAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
         {
+            //Uses the http client to send a get request to the weather service API using the URI in the HttpRequestMessage
             using var response = await _httpClient.SendAsync(requestMessage, cancellationToken);
 
             if (!response.IsSuccessStatusCode)
@@ -75,8 +86,10 @@ namespace Weather.DAL.Repositories
                 return Result.Fail($"Failed response to {nameof(SendAsync)}");
             }   
 
+            //Reads response content as a string data
             var resultContent = await response.Content.ReadAsStringAsync();
 
+            //Converts that string data into json results by deserializing
             var result = JsonSerializer.Deserialize<T>(resultContent);
 
             if (result is null)
@@ -87,6 +100,7 @@ namespace Weather.DAL.Repositories
             return Result.Ok(result);
         }
 
+        //Builds the URL to request data from the Weather API
         private string OpenWeatherUrlBuilder(string resource, string location, string unit)
         {
             return $"https://api.openweathermap.org/data/2.5/{resource}?q=" +

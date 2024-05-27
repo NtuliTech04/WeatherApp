@@ -1,0 +1,42 @@
+<form class="location-search-form" [formGroup]="searchCityForm" (ngSubmit)="onSubmit()">
+  <div class="location-search-container">
+    <button mat-flat-button color="primary" class="btn-gps" type="button">
+      <mat-icon class="mat-18">gps_fixed</mat-icon>
+    </button>
+    <span class="searchQuery">
+      <input class="input-location-search" type="text" formControlName="cityName" placeholder="Search by city name" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let city of filteredCities | async" [value]="city">{{city}}</mat-option>
+      </mat-autocomplete>
+
+      <span mdbDropdown class="dropdown weather-units">
+        <button
+          class="btn-unit-settings"
+          type="button"
+          mdbDropdownToggle>
+          <div class="unit-value">°C
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </div>
+        </button>
+        <ul mdbDropdownMenu class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" name="metric"> Celsius</a></li>
+          <li><a class="dropdown-item" href="#" name="imperial">Fahrenheit</a></li>
+        </ul>
+      </span>
+      <!--
+      <button class="btn-unit-settings" type="button">
+        <div class="unit-value">°C</div>
+      </button> -->
+
+      <button type="submit" class="btn-location-search" mat-flat-button color="primary">
+        <mat-icon class="mat-18">search</mat-icon>
+      </button>
+    </span>
+  </div>
+</form>
+
+  <!--Validation-->
+  <div class="validation-container">
+    <ngb-alert type="danger" [dismissible]="false" *ngIf="submitted && validateForm['cityName'].hasError('required')">Search weather by entering the City name.</ngb-alert>
+    <ngb-alert type="danger" [dismissible]="false" *ngIf="submitted && validateForm['cityName'].hasError('invalidCity')">Invalid City. Only choose from suggestions.</ngb-alert>
+  </div>

@@ -62,7 +62,7 @@ namespace Weather.API.Controllers
 
         //Get Action Method - Five Days Forecast / 3 Hour Interval
         [HttpGet, Route("fivedays-hourly-forecast")]
-        public async Task<ActionResult<List<WeatherClientResponseDto>>> FiveDaysHourlyForecast(string location, string unit, CancellationToken cancellationToken)
+        public async Task<ActionResult<List<WeatherClientResponseDataDto>>> FiveDaysHourlyForecast(string location, string unit, CancellationToken cancellationToken)
         {
             try
             {

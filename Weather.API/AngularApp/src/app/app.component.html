@@ -1,0 +1,19 @@
+<nav class="toolbar" role="banner">
+  <a [href]="baseUrl">
+      <img width="37" alt="logo" src="./../assets/Images/logo.png"/>
+      <div class="site-title">{{ title }}</div>
+  </a>
+  <div class="toolbar-location-search">
+    <app-forecast-location-search></app-forecast-location-search>
+  </div>
+</nav>
+
+<main class="content" role="main">
+    <section class="forecast-container">
+      <div class="current-weather">
+        <app-forecast-location></app-forecast-location>
+        <div class="current-forecast-title"><h2>Current Weather</h2></div>
+        <app-current-forecast></app-current-forecast>
+      </div>
+    </section>
+</main>

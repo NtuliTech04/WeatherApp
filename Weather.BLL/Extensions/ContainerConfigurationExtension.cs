@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
 using System.Reflection;
 using Weather.BLL.Interfaces;
 using Weather.BLL.Interfaces.Repositories;
@@ -41,11 +39,12 @@ namespace Weather.BLL.Extensions
 
         private static void AddServices(this IServiceCollection services)
         {
+            services.AddTransient<IDateTimeService, DateTimeService>();
             services.AddTransient<IWeatherForecastService, WeatherForecastService>();
             services.AddTransient<ICustomWeatherService, CustomWeatherService>();
         }
 
-        //Fluent Validations can be added here
+        /*Fluent Validations can be added here*/
 
         #region API Versioning
 

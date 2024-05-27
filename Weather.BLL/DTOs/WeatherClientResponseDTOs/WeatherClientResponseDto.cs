@@ -1,4 +1,6 @@
-﻿namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
+﻿using Newtonsoft.Json;
+
+namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
     public class WeatherClientResponseDto
     {

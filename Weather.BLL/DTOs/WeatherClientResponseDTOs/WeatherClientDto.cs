@@ -10,15 +10,15 @@
     public class MainDto
     {
         public decimal Temp { get; set; }
-        public int FeelsLike { get; set; }
-        public int MinTemp { get; set; }
-        public int MaxTemp { get; set; }
+        public decimal FeelsLike { get; set; }
+        public decimal MinTemp { get; set; }
+        public decimal MaxTemp { get; set; }
         public int Humidity { get; set; }
     }
 
     public class WindDto
     {
-        public int Speed { get; set; }
+        public decimal Speed { get; set; }
         public int Direction { get; set; }
     }
 

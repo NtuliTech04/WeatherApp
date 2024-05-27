@@ -61,23 +61,3 @@ namespace Weather.BLL.Services
         }
     }
 }
-#region GetFiveDayForecast Old
-//public async Task<List<WeatherClientResponseDto>>  GetFiveDayForecast(string location, string unit, CancellationToken cancellationToken)
-//{
-//    var fiveDayResult = await _openWeatherClient.FiveDayForecastResponse(location, unit, cancellationToken);
-
-//    if (fiveDayResult.IsFailed)
-//    {
-//        throw new BadRequestException(Result.Fail(fiveDayResult.Errors).ToString());
-//    }
-
-//    if (fiveDayResult.Value is null || !fiveDayResult.Value.WeatherForecastData.Any())
-//    {
-//        throw new Utilities.Exceptions.NotFoundException(ErrorMessages.GetDataFailed_NullOrEmpty);
-//    }
-
-//    var mappedForecast = _mapper.Map<WeatherClientResponseDataDto>(fiveDayResult.Value);
-
-//    return [.. mappedForecast.WeatherForecastDataDto];
-//}
-#endregion

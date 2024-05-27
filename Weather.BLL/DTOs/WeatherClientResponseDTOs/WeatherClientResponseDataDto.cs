@@ -4,6 +4,6 @@
     {
         public IReadOnlyCollection<WeatherClientResponseDto> WeatherForecastDataDto { get; init; } = new List<WeatherClientResponseDto>();
 
-        public CityDto LocationDataDto { get; set; }
+        public CityDto LocationDataDto { get; set; } = new CityDto();
     }
 }

@@ -15,5 +15,3 @@ namespace Weather.BLL.DTOs.FiveDayWeatherDTOs
         public FiveDayTempsDto FiveDayTemps { get; set; }
     }
 }
-
-

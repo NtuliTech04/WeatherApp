@@ -3,7 +3,7 @@ using Weather.BLL.DTOs;
 
 namespace Weather.BLL.Validators
 {
-    public class UrlOptionsDtoValidator : AbstractValidator<UrlOptionsDto>
+    public class UrlOptionsDtoValidator : AbstractValidator<UrlOptions>
     {
         public UrlOptionsDtoValidator()
         {

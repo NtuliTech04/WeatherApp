@@ -4,8 +4,8 @@
     {
         public string[] Errors { get; set; }
 
-        public BadRequestException() 
-            : base() 
+        public BadRequestException()
+            : base()
         {
         }
 

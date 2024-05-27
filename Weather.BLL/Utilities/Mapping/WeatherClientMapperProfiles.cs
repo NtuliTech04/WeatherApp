@@ -12,7 +12,7 @@ namespace Weather.BLL.Utilities.Mapping
         {
             public AutoMapperProfile()
             {
-                //Maps Weather Data Model from DAL to WeatherDto from BLL
+                //Maps Weather Model from DAL to WeatherDto from BLL
                 CreateMap<DAL.Models.WeatherForecast.Weather, WeatherDto>()
                     .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.main))
                     .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description))
@@ -46,12 +46,6 @@ namespace Weather.BLL.Utilities.Mapping
                     .ForMember(dest => dest.Wind, opt => opt.MapFrom(src => src.Wind));
 
 
-                //Maps Coordinates Model from DAL to Coordinates Dto from BLL
-                CreateMap<DAL.Models.GeoArea.Coord, CoordDto>()
-                    .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.lat))
-                    .ForMember(dest => dest.Longitude, opt => opt.MapFrom(src => src.lon));
-
-
                 //Maps City Model from DAL to CityDto from BLL
                 CreateMap<City, CityDto>()
                     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
@@ -60,6 +54,13 @@ namespace Weather.BLL.Utilities.Mapping
                     .ForMember(dest => dest.Timezone, opt => opt.MapFrom(src => src.timezone))
                     .ForMember(dest => dest.Sunrise, opt => opt.MapFrom(src => src.sunrise))
                     .ForMember(dest => dest.Sunset, opt => opt.MapFrom(src => src.sunset));
+
+
+
+                //Maps Coordinates Model from DAL to Coordinates Dto from BLL
+                CreateMap<Coord, CoordDto>()
+                    .ForMember(dest => dest.Latitude, opt => opt.MapFrom(src => src.lat))
+                    .ForMember(dest => dest.Longitude, opt => opt.MapFrom(src => src.lon));
 
 
                 //Maps WeatherAPIResponse Data Model from DAL to WeatherAPIResponse DTO from BLL

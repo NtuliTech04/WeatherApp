@@ -12,12 +12,15 @@ namespace Weather.BLL.Services
 
         private readonly ICustomWeatherRepository _repository;
         private readonly IWeatherForecastService _forecastService;
+        private readonly IDateTimeService _dateTimeService;
         private IMapper _mapper;
 
-        public CustomWeatherService(ICustomWeatherRepository repository, IWeatherForecastService forecastService, IMapper mapper)
+        public CustomWeatherService(ICustomWeatherRepository repository, IWeatherForecastService forecastService, IDateTimeService dateTimeService, IMapper mapper)
         {
+
             _repository = repository;
             _forecastService = forecastService;
+            _dateTimeService = dateTimeService;
             _mapper = mapper;
         }
 
@@ -31,7 +34,7 @@ namespace Weather.BLL.Services
             //Convert timestamps and assign result to date 
             foreach (var forecast in forecastList)
             {
-                forecast.WeatherDate = DateTimeOffset.FromUnixTimeSeconds(forecast.Timestamp).DateTime.Date;
+                forecast.WeatherDate = _dateTimeService.GetHumanDate(forecast.Timestamp).Date;
             }
 
             //Applies processing logic from the function and returns results

@@ -1,0 +1,92 @@
+.location-search-container {
+  width: 500px;
+  overflow: hidden;
+}
+.input-location-search {
+  width: 60%;
+  border: 0;
+  outline: none;
+  background-color: #eee;
+  padding: 8px;
+}
+.btn-location-search, .btn-gps {
+  vertical-align: top;
+  background-color: darkblue !important;
+}
+.btn-location-search {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-gps {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+.btn-unit-settings{
+  vertical-align: top;
+  font-weight: 500;
+  background-color: #cfe2ff;
+  justify-content: center;
+  padding: 8px;
+  border: 0;
+  width: 10%;
+}
+.fa-caret-down {
+  position: relative;
+  font-size: 12px;
+  top: -1.5px;
+  left: 2px;
+  opacity: .7;
+}
+.dropdown-menu,
+.dropdown-menu:hover a{
+  border-radius: 0;
+}
+/* .dropdown-toggle {
+  position: relative;
+  display: inline-flex;
+} */
+button .mat-18{
+  left: 5px;
+  top: 1px;
+}
+.validation-container {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.validation-container ngb-alert {
+  position: relative;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px;
+  left: -10px;
+  top: 1.2em;
+}
+
+
+@media screen and (max-width: 930px) {
+  .location-search-container {
+      width: 320px;
+  }
+
+  .input-location-search {
+      width: 130px;
+      font-size: 13px;
+  }
+
+  .fa-caret-down {
+    display: none;
+  }
+
+  .validation-container {
+    width: 250px;
+  }
+
+  .validation-container ngb-alert {
+    font-size: 11px;
+    top: 1.4em;
+  }
+}

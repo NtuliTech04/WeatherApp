@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\IWeatherForecastRepository.cs" />
+    <Compile Remove="Interfaces\Repositories\WeatherForecastRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Weather.DAL\Weather.DAL.csproj" />
   </ItemGroup>
 

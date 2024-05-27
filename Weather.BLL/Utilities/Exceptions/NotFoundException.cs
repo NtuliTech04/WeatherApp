@@ -2,8 +2,8 @@
 {
     public class NotFoundException : Exception
     {
-        public NotFoundException() 
-            : base ()
+        public NotFoundException()
+            : base()
         {
         }
 

@@ -43,7 +43,7 @@ namespace Weather.BLL.Utilities.Mapping
                     .ForMember(dest => dest.CurrentCoord, opt => opt.MapFrom(src => src.Coord))
                     .ForMember(dest => dest.CurrentTimezone, opt => opt.MapFrom(src => src.Timezone))
                     .ForMember(dest => dest.CurrentLocality, opt => opt.MapFrom(src => src.Name))
-                    .ForMember(dest => dest.CurrentGeoArea, opt => opt.MapFrom(src => src.Sys));
+                    .ForMember(dest => dest.CurrentGeoLocation, opt => opt.MapFrom(src => src.Sys));
 
 
                 //Maps CurrentCoord Model from DAL to CurrentCoordDto from BLL
