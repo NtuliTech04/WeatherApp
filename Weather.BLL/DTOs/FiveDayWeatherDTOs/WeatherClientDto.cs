@@ -3,14 +3,14 @@ using Weather.BLL.Utilities.Mappings.Generic;
 
 namespace Weather.BLL.DTOs.FiveDayWeatherDTOs
 {
-    public class FiveDayWeatherConditionDto : IMapFrom<WeatherDto>
+    public class FiveDayWeatherConditionDto : IGenericMapper<WeatherDto>
     {
         public string Condition { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
     }
 
-    public class FiveDayTempsDto : IMapFrom<MainDto>
+    public class FiveDayTempsDto : IGenericMapper<MainDto>
     {
         public decimal Temp { get; set; }
         public int Humidity { get; set; }

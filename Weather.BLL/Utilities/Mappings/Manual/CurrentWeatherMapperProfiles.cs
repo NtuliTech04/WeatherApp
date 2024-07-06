@@ -13,30 +13,30 @@ namespace Weather.BLL.Utilities.Mappings.Manual
             {
                 //Maps Weather Data Model from DAL to CurentWeatherDto from BLL
                 CreateMap<DAL.Models.Forecast.Weather, CurrentWeatherDto>()
-                    .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.main))
-                    .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description))
-                    .ForMember(dest => dest.Icon, opt => opt.MapFrom(src => src.icon));
+                    .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.main));
+                //.ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description))
+                //.ForMember(dest => dest.Icon, opt => opt.MapFrom(src => src.icon));
 
 
                 //Maps Main Model from DAL to CurentTemperaturesDto from BLL
                 CreateMap<Main, CurrentTempsDto>()
-                    .ForMember(dest => dest.Temp, opt => opt.MapFrom(src => src.temp))
+                    //.ForMember(dest => dest.Temp, opt => opt.MapFrom(src => src.temp))
                     .ForMember(dest => dest.FeelsLike, opt => opt.MapFrom(src => src.feels_like))
                     .ForMember(dest => dest.MinTemp, opt => opt.MapFrom(src => src.temp_min))
-                    .ForMember(dest => dest.MaxTemp, opt => opt.MapFrom(src => src.temp_max))
-                    .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.humidity));
+                    .ForMember(dest => dest.MaxTemp, opt => opt.MapFrom(src => src.temp_max));
+                    //.ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.humidity));
 
 
                 //Maps Wind Model from DAL to CurentWindDto from BLL
                 CreateMap<Wind, CurrentWindDto>()
-                    .ForMember(dest => dest.Speed, opt => opt.MapFrom(src => src.speed))
+                    //.ForMember(dest => dest.Speed, opt => opt.MapFrom(src => src.speed))
                     .ForMember(dest => dest.Direction, opt => opt.MapFrom(src => src.deg));
 
 
                 //Maps WeatherResponse Model from DAL to CurrentForecastDto from BLL
                 CreateMap<CurrentWeatherResponse, CurrentForecastDto>()
                     .ForMember(dest => dest.Timestamp, opt => opt.MapFrom(src => src.Dt))
-                    .ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.Visibility))
+                    //.ForMember(dest => dest.Visibility, opt => opt.MapFrom(src => src.Visibility))
                     .ForMember(dest => dest.CurrentWeather, opt => opt.MapFrom(src => src.WeatherCondition))
                     .ForMember(dest => dest.CurrentTemps, opt => opt.MapFrom(src => src.Main))
                     .ForMember(dest => dest.CurrentWind, opt => opt.MapFrom(src => src.Wind))
@@ -54,10 +54,10 @@ namespace Weather.BLL.Utilities.Mappings.Manual
 
 
                 //Maps Sys Model from DAL to SysDto from BLL
-                CreateMap<Sys, SysDto>()
-                    .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.country))
-                    .ForMember(dest => dest.Sunrise, opt => opt.MapFrom(src => src.sunrise))
-                    .ForMember(dest => dest.Sunset, opt => opt.MapFrom(src => src.sunset));
+                //CreateMap<Sys, SysDto>()
+                //    .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.country))
+                //    .ForMember(dest => dest.Sunrise, opt => opt.MapFrom(src => src.sunrise))
+                //    .ForMember(dest => dest.Sunset, opt => opt.MapFrom(src => src.sunset));
             }
         }
     }

@@ -3,7 +3,7 @@ using Weather.DAL.Data.WeatherClientResponse;
 
 namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
-    public class WeatherClientResponseDataDto : IMapFrom<WeatherClientResponseData>
+    public class WeatherClientResponseDataDto : IGenericMapper<WeatherClientResponseData>
     {
         public IReadOnlyCollection<WeatherClientResponseDto> WeatherForecastDataDto { get; init; } = new List<WeatherClientResponseDto>();
 

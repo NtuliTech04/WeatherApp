@@ -4,7 +4,7 @@ using Weather.DAL.Data.WeatherClientResponse;
 
 namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
-    public class WeatherClientResponseDto : IMapFrom<WeatherClientResponse>
+    public class WeatherClientResponseDto : IGenericMapper<WeatherClientResponse>
     {
         public long Timestamp { get; set; }
         public int Visibility { get; set; }

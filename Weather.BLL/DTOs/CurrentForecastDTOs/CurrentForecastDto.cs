@@ -3,7 +3,7 @@ using Weather.DAL.Data.CurrentWeatherResponse;
 
 namespace Weather.BLL.DTOs.CurrentForecastDTOs
 {
-    public class CurrentForecastDto : IMapFrom<CurrentWeatherResponse>
+    public class CurrentForecastDto : IGenericMapper<CurrentWeatherResponse>
     {   
         public long Timestamp { get; set; }
         public DateTime LastUpdated => GetHumanDate(Timestamp);

@@ -4,14 +4,14 @@ using Weather.DAL.Models.Location;
 
 namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
-    public class WeatherDto : IMapFrom<DAL.Models.Forecast.Weather>
+    public class WeatherDto : IGenericMapper<DAL.Models.Forecast.Weather>
     {
         public string Condition { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
     }
 
-    public class MainDto : IMapFrom<Main>
+    public class MainDto : IGenericMapper<Main>
     {
         public decimal Temp { get; set; }
         public decimal FeelsLike { get; set; }
@@ -20,13 +20,13 @@ namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
         public int Humidity { get; set; }
     }
 
-    public class WindDto : IMapFrom<Wind> 
+    public class WindDto : IGenericMapper<Wind> 
     {
         public decimal Speed { get; set; }
         public int Direction { get; set; }
     }
 
-    public class CityDto : IMapFrom<City>
+    public class CityDto : IGenericMapper<City>
     {
         public string Name { get; set; }
         public CoordDto Coord { get; set; }
@@ -36,7 +36,7 @@ namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
         public long Sunset { get; set; }
     }
 
-    public class CoordDto : IMapFrom<Coord>
+    public class CoordDto : IGenericMapper<Coord>
     {
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }

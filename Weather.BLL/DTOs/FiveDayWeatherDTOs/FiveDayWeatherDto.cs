@@ -4,7 +4,7 @@ using Weather.BLL.Utilities.Mappings.Generic;
 
 namespace Weather.BLL.DTOs.FiveDayWeatherDTOs
 {
-    public class FiveDayWeatherDto : IMapFrom<WeatherClientResponseDto>
+    public class FiveDayWeatherDto : IGenericMapper<WeatherClientResponseDto>
     {
         public long Timestamp { get; set; }
         public DateTime WeatherDate { get; set; }

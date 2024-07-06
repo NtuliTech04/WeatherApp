@@ -3,7 +3,7 @@ using Weather.DAL.Models;
 
 namespace Weather.BLL.DTOs
 {
-    public class UrlOptionsDto : IMapFrom<UrlOptions>
+    public class UrlOptionsDto : IGenericMapper<UrlOptions>
     {
         public string City { get; set; }
 

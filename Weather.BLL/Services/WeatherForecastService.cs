@@ -29,7 +29,9 @@ namespace Weather.BLL.Services
 
         public async Task<CurrentForecastDto> GetCurrentForecast(UrlOptionsDto options, CancellationToken cancellationToken)
         {
-            var currentResult = await _openWeatherClient.CurrentForecastResponse(_mapper.Map<UrlOptions>(options), cancellationToken);
+            var urlOptions = _mapper.Map<UrlOptions>(options);
+            var currentResult = await _openWeatherClient.CurrentForecastResponse(urlOptions, cancellationToken);
+
             if (currentResult.IsFailed) 
             {
                 throw new BadRequestException(Result.Fail(currentResult.Errors).ToString());
@@ -45,7 +47,8 @@ namespace Weather.BLL.Services
 
         public async Task<WeatherClientResponseDataDto> GetFiveDayForecast(UrlOptionsDto options, CancellationToken cancellationToken)
         {
-            var fiveDayResult = await _openWeatherClient.FiveDayForecastResponse(_mapper.Map<UrlOptions>(options), cancellationToken);
+            var urlOptions = _mapper.Map<UrlOptions>(options);
+            var fiveDayResult = await _openWeatherClient.FiveDayForecastResponse(urlOptions, cancellationToken);
 
             if (fiveDayResult.IsFailed)
             {

@@ -12,8 +12,8 @@ namespace Weather.BLL.Utilities.Mappings.Generic
 
         private void ApplyMappingsFromAssembly(Assembly assembly)
         {
-            var mapFromType = typeof(IMapFrom<>);
-            var mappingMethodName = nameof(IMapFrom<object>.Mapping);
+            var mapFromType = typeof(IGenericMapper<>);
+            var mappingMethodName = nameof(IGenericMapper<object>.Mapping);
             bool HasInterface(Type t) => t.IsGenericType && t.GetGenericTypeDefinition() == mapFromType;
             var types = assembly.GetExportedTypes().Where(t => t.GetInterfaces().Any(HasInterface)).ToList();
             var argumentTypes = new Type[] { typeof(Profile) };
