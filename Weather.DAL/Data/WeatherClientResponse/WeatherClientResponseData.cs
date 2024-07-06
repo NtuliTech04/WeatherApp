@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using Weather.DAL.Models.GeoArea;
+using Weather.DAL.Models.Location;
 
 namespace Weather.DAL.Data.WeatherClientResponse
 {

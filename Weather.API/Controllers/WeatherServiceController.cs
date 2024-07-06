@@ -4,6 +4,7 @@ using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.BLL.Services.IService;
 using Weather.BLL.DTOs.FiveDayWeatherDTOs;
 using Weather.BLL.DTOs.CurrentForecastDTOs;
+using Weather.BLL.DTOs;
 
 namespace Weather.API.Controllers
 {
@@ -29,11 +30,11 @@ namespace Weather.API.Controllers
 
         //Get Action Method - Weather Now
         [HttpGet, Route("current")]
-        public async Task<ActionResult<CurrentForecastDto>> CurrentWeather(string location, string unit, CancellationToken cancellationToken)
+        public async Task<ActionResult<CurrentForecastDto>> CurrentWeather([FromQuery] UrlOptionsDto options, CancellationToken cancellationToken)
         {
             try
             {
-                var weatherNow = await _weatherService.GetCurrentForecast(location, unit, cancellationToken);
+                var weatherNow = await _weatherService.GetCurrentForecast(options, cancellationToken);
                 return await Task.Run(() => Ok(weatherNow));
             }
             catch (Exception ex)
@@ -45,11 +46,11 @@ namespace Weather.API.Controllers
 
         //Get Action Method - Five Days Forecast
         [HttpGet, Route("fivedays-forecast")]
-        public async Task<ActionResult<List<FiveDayWeatherDto>>> FiveDaysForecast(string location, string unit, CancellationToken cancellationToken)
+        public async Task<ActionResult<List<FiveDayWeatherDto>>> FiveDaysForecast([FromQuery] UrlOptionsDto options, CancellationToken cancellationToken)
         {
             try
             {
-                var fivedayWeather = await _customWeatherService.FiveDayWeather(location, unit, cancellationToken);
+                var fivedayWeather = await _customWeatherService.FiveDayWeather(options, cancellationToken);
                 return await Task.Run(() => Ok(fivedayWeather));
             }
             catch (Exception ex)
@@ -62,11 +63,11 @@ namespace Weather.API.Controllers
 
         //Get Action Method - Five Days Forecast / 3 Hour Interval
         [HttpGet, Route("fivedays-hourly-forecast")]
-        public async Task<ActionResult<List<WeatherClientResponseDataDto>>> FiveDaysHourlyForecast(string location, string unit, CancellationToken cancellationToken)
+        public async Task<ActionResult<List<WeatherClientResponseDataDto>>> FiveDaysHourlyForecast([FromQuery] UrlOptionsDto options, CancellationToken cancellationToken)
         {
             try
             {
-                var forecast = await _weatherService.GetFiveDayForecast(location, unit, cancellationToken);
+                var forecast = await _weatherService.GetFiveDayForecast(options, cancellationToken);
                 return await Task.Run(() => Ok(forecast));
             }
             catch (Exception ex)

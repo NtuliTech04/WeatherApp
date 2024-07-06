@@ -1,4 +1,4 @@
-﻿namespace Weather.DAL.Models.WeatherForecast
+﻿namespace Weather.DAL.Models.Forecast
 {
     public class Wind
     {

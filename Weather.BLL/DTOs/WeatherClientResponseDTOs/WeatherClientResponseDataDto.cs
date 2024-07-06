@@ -1,6 +1,9 @@
-﻿namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
+﻿using Weather.BLL.Utilities.Mappings.Generic;
+using Weather.DAL.Data.WeatherClientResponse;
+
+namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
-    public class WeatherClientResponseDataDto
+    public class WeatherClientResponseDataDto : IMapFrom<WeatherClientResponseData>
     {
         public IReadOnlyCollection<WeatherClientResponseDto> WeatherForecastDataDto { get; init; } = new List<WeatherClientResponseDto>();
 

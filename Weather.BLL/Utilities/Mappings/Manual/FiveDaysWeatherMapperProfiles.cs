@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Weather.BLL.DTOs.FiveDayWeatherDTOs;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
-namespace Weather.BLL.Utilities.Mapping
+
+namespace Weather.BLL.Utilities.Mappings.Manual
 {
     public static class FiveDaysWeatherMapperProfiles
     {

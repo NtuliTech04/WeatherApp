@@ -40,6 +40,73 @@
   font-size: 14.5px;
 }
 
+/** Custom CSS **/
+
+.sun-moon {
+  position: relative;
+}
+.sun-moon > div {
+  margin-left: 70px;
+}
+.sunrise {
+  width: 330px;
+  height: 90px;
+  border-bottom: 1px solid #999;
+  overflow-y: hidden;
+}
+.sunrise .sun-positions {
+  margin-left: 6px;
+  width: 315px;
+  height: 315px;
+  overflow: hidden;
+  border: 1px dashed #999;
+  border-radius: 50%;
+}
+.sunrise .sun-path {
+  position: absolute;
+  color: yellow;
+  text-shadow: 0 0 5px black;
+  height: 85px;
+  transition: transform 2s linear;
+  transform-origin: 50% 100%;
+  transform: rotateZ(-75deg);
+  left: 110px;
+  bottom: 0;
+}
+.sun-emoji img{
+  width: 80px;
+}
+.sunrise .sun-path .sun-emoji img {
+  position: relative;
+  font-size: 16px;
+  top: -8px;
+}
+.sunrise .sun-animation {
+  width: 0px;
+  height: 150px;
+  background-color: rgba(255, 255, 0, 0.4);
+  -webkit-transition: width 2s linear;
+  transition: width 2s linear;
+}
+.sun-info {
+  position: absolute;
+  bottom: -10px;
+}
+.sun-info > div {
+  position: absolute;
+  font-size: 12px;
+  width: 120px;
+}
+.sun-info span {
+  font-weight: bold;
+}
+.sun-info .set {
+  left: 280px;
+}
+
+/** //Custom CSS **/
+
+
 @media screen and (max-width: 767px) {
   .current-forecast-container {
       margin-left: unset;

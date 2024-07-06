@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using Weather.BLL.Abstractions;
+using Weather.BLL.DTOs;
 using Weather.BLL.DTOs.FiveDayWeatherDTOs;
-using Weather.BLL.Interfaces;
-using Weather.BLL.Interfaces.Repositories;
 using Weather.BLL.Services.IService;
 
 namespace Weather.BLL.Services
@@ -26,9 +26,9 @@ namespace Weather.BLL.Services
 
         #endregion
 
-        public async Task<List<FiveDayWeatherDto>> FiveDayWeather(string location, string unit, CancellationToken cancellationToken)
+        public async Task<List<FiveDayWeatherDto>> FiveDayWeather(UrlOptionsDto options, CancellationToken cancellationToken)
         {
-            var forecastResult = await _forecastService.GetFiveDayForecast(location, unit, cancellationToken);
+            var forecastResult = await _forecastService.GetFiveDayForecast(options, cancellationToken);
             var forecastList = _mapper.Map<List<FiveDayWeatherDto>>(forecastResult.WeatherForecastDataDto);
 
             //Convert timestamps and assign result to date 

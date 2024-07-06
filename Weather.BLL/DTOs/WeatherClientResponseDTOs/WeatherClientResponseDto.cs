@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
+using Weather.BLL.Utilities.Mappings.Generic;
+using Weather.DAL.Data.WeatherClientResponse;
 
 namespace Weather.BLL.DTOs.WeatherClientResponseDTOs
 {
-    public class WeatherClientResponseDto
+    public class WeatherClientResponseDto : IMapFrom<WeatherClientResponse>
     {
         public long Timestamp { get; set; }
         public int Visibility { get; set; }

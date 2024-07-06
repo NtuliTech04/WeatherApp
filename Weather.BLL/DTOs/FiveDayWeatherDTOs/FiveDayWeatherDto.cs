@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
+using Weather.BLL.DTOs.WeatherClientResponseDTOs;
+using Weather.BLL.Utilities.Mappings.Generic;
 
 namespace Weather.BLL.DTOs.FiveDayWeatherDTOs
 {
-    public class FiveDayWeatherDto
+    public class FiveDayWeatherDto : IMapFrom<WeatherClientResponseDto>
     {
         public long Timestamp { get; set; }
         public DateTime WeatherDate { get; set; }

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation.AspNetCore;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using Weather.BLL.Interfaces;
-using Weather.BLL.Interfaces.Repositories;
+using Weather.BLL.Abstractions;
+using Weather.BLL.Abstractions.Repositories;
 using Weather.BLL.Services;
 using Weather.BLL.Services.IService;
 using Weather.BLL.Utilities.Swagger;
@@ -19,6 +21,7 @@ namespace Weather.BLL.Extensions
             services.AddAutoMapper();
             services.AddRepositories();
             services.AddServices();
+            services.AddValidators();
             services.APIVersioning();
             services.AddVersionedAPI();
             services.AddSwaggerSupport();
@@ -44,7 +47,13 @@ namespace Weather.BLL.Extensions
             services.AddTransient<ICustomWeatherService, CustomWeatherService>();
         }
 
-        /*Fluent Validations can be added here*/
+        private static void AddValidators(this IServiceCollection services)
+        {
+            services.AddFluentValidationAutoValidation();
+            services.AddFluentValidationClientsideAdapters();
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        }
+
 
         #region API Versioning
 
@@ -78,7 +87,6 @@ namespace Weather.BLL.Extensions
         {
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
-
 
             //services.AddSwaggerGen(options =>
             //{

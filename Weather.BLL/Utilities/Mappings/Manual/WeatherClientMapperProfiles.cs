@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.DAL.Data.WeatherClientResponse;
-using Weather.DAL.Models.GeoArea;
-using Weather.DAL.Models.WeatherForecast;
+using Weather.DAL.Models.Forecast;
+using Weather.DAL.Models.Location;
 
-namespace Weather.BLL.Utilities.Mapping
+namespace Weather.BLL.Utilities.Mappings.Manual
 {
     public static class WeatherClientMapperProfiles
     {
@@ -13,7 +13,7 @@ namespace Weather.BLL.Utilities.Mapping
             public AutoMapperProfile()
             {
                 //Maps Weather Model from DAL to WeatherDto from BLL
-                CreateMap<DAL.Models.WeatherForecast.Weather, WeatherDto>()
+                CreateMap<DAL.Models.Forecast.Weather, WeatherDto>()
                     .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.main))
                     .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description))
                     .ForMember(dest => dest.Icon, opt => opt.MapFrom(src => src.icon));

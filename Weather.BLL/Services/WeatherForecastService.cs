@@ -2,11 +2,13 @@
 using AutoMapper;
 using FluentResults;
 using Weather.BLL.Constants.Resources;
+using Weather.BLL.DTOs;
 using Weather.BLL.DTOs.CurrentForecastDTOs;
 using Weather.BLL.DTOs.WeatherClientResponseDTOs;
 using Weather.BLL.Services.IService;
 using Weather.BLL.Utilities.Exceptions;
 using Weather.DAL.Abstractions;
+using Weather.DAL.Models;
 
 namespace Weather.BLL.Services
 {
@@ -25,10 +27,10 @@ namespace Weather.BLL.Services
 
         #endregion
 
-        public async Task<CurrentForecastDto> GetCurrentForecast(string location, string unit, CancellationToken cancellationToken)
+        public async Task<CurrentForecastDto> GetCurrentForecast(UrlOptionsDto options, CancellationToken cancellationToken)
         {
-            var currentResult = await _openWeatherClient.CurrentForecastResponse(location, unit, cancellationToken);
-            if (currentResult.IsFailed)
+            var currentResult = await _openWeatherClient.CurrentForecastResponse(_mapper.Map<UrlOptions>(options), cancellationToken);
+            if (currentResult.IsFailed) 
             {
                 throw new BadRequestException(Result.Fail(currentResult.Errors).ToString());
             }
@@ -41,9 +43,9 @@ namespace Weather.BLL.Services
             return _mapper.Map<CurrentForecastDto>(currentResult.Value);
         }
 
-        public async Task<WeatherClientResponseDataDto> GetFiveDayForecast(string location, string unit, CancellationToken cancellationToken)
+        public async Task<WeatherClientResponseDataDto> GetFiveDayForecast(UrlOptionsDto options, CancellationToken cancellationToken)
         {
-            var fiveDayResult = await _openWeatherClient.FiveDayForecastResponse(location, unit, cancellationToken);
+            var fiveDayResult = await _openWeatherClient.FiveDayForecastResponse(_mapper.Map<UrlOptions>(options), cancellationToken);
 
             if (fiveDayResult.IsFailed)
             {

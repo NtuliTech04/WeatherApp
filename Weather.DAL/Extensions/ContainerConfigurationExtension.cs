@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Weather.DAL.Abstractions;
-using Weather.DAL.Configurations;
+using Weather.DAL.Configurations.ValueObjects;
 using Weather.DAL.Repositories;
 
 namespace Weather.DAL.Extensions
@@ -18,12 +18,8 @@ namespace Weather.DAL.Extensions
         //Configure OpenWeatherMap API Key
         private static void AddOpenWeatherAPI(this IServiceCollection services, IConfiguration configuration)
         {
-            var openWeatherConfig = configuration.GetSection("OpenWeather");
-            services.Configure<OpenWeather>(openWeatherConfig);
             services.AddHttpClient();
-
-            //var moviesConfig = configuration.GetSection("OpenWeather").Get<OpenWeather>();
-            //var WeatherAPIKey = configuration["OpenWeather:ApiKey"];
+            services.Configure<OpenWeather>(configuration.GetSection("OpenWeather"));
         }
 
         private static void AddRepositories(this IServiceCollection services)

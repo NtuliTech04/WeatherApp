@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Weather.BLL.DTOs.CurrentForecastDTOs;
 using Weather.DAL.Data.CurrentWeatherResponse;
-using Weather.DAL.Models.WeatherForecast;
+using Weather.DAL.Models.Forecast;
 
-namespace Weather.BLL.Utilities.Mapping
+namespace Weather.BLL.Utilities.Mappings.Manual
 {
     public static class CurrentWeatherMapperProfiles
     {
@@ -12,7 +12,7 @@ namespace Weather.BLL.Utilities.Mapping
             public AutoMapperProfile()
             {
                 //Maps Weather Data Model from DAL to CurentWeatherDto from BLL
-                CreateMap<DAL.Models.WeatherForecast.Weather, CurrentWeatherDto>()
+                CreateMap<DAL.Models.Forecast.Weather, CurrentWeatherDto>()
                     .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.main))
                     .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.description))
                     .ForMember(dest => dest.Icon, opt => opt.MapFrom(src => src.icon));

@@ -1,13 +1,14 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.Options;
 using Weather.DAL.Abstractions;
-using Weather.DAL.Configurations;
 using Ardalis.GuardClauses;
 using FluentResults;
 using System.Text.Json;
 using Weather.DAL.Data.WeatherClientResponse;
 using Weather.DAL.Data.CurrentWeatherResponse;
 using Weather.BLL.Constants.Enums;
+using Weather.DAL.Models;
+using Weather.DAL.Configurations.ValueObjects;
 
 namespace Weather.DAL.Repositories
 {
@@ -28,13 +29,13 @@ namespace Weather.DAL.Repositories
         #endregion
 
         //Gets the current forecast from the weather API
-        public async Task<Result<CurrentWeatherResponse>> CurrentForecastResponse(string location, string unit, CancellationToken cancellationToken)
+        public async Task<Result<CurrentWeatherResponse>> CurrentForecastResponse(UrlOptions options, CancellationToken cancellationToken)
         {
             //Creates a new instance of an http request message class and initializes its properties 
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.weather.ToString(), location, unit))
+                RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.weather.ToString(), options))
             };
 
 
@@ -45,13 +46,13 @@ namespace Weather.DAL.Repositories
         }
 
         //Gets a five day/3 hourly forecast from the weather API
-        public async Task<Result<WeatherClientResponseData>> FiveDayForecastResponse(string location, string unit, CancellationToken cancellationToken)
+        public async Task<Result<WeatherClientResponseData>> FiveDayForecastResponse(UrlOptions options, CancellationToken cancellationToken)
         {
             //Creates a new instance of an http request message class and initializes its properties 
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.forecast.ToString(), location, unit))
+                RequestUri = new Uri(OpenWeatherUrlBuilder(WeatherResource.forecast.ToString(), options))
             };
 
             //Sends the new instance of http request message to the handling method
@@ -100,21 +101,16 @@ namespace Weather.DAL.Repositories
             return Result.Ok(result);
         }
 
+        
+        
         //Builds the URL to request data from the Weather API
-        private string OpenWeatherUrlBuilder(string resource, string location, string unit)
+        private string OpenWeatherUrlBuilder(string resource, UrlOptions options)
         {
             return $"https://api.openweathermap.org/data/2.5/{resource}?q=" +
-                   $"{location}," +
+                   $"{options.City}," +
                    $"{"za"}" +
                    $"&appid={_openWeatherConfig.ApiKey}" +
-                   $"&units={unit}";
-
-            #region Old Open Weather URL
-            //$"https://api.openweathermap.org/data/2.5/forecast" +
-            //$"?appid={_openWeatherConfig.ApiKey}" +
-            //$"&q={location}" +
-            //$"&units={unit}";
-            #endregion
+                   $"&units={options.Unit}";
         }
     }
 }

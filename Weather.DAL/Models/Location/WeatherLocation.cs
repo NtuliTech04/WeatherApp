@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Weather.DAL.Models.GeoArea
+namespace Weather.DAL.Models.Location
 {
     public class City
     {
@@ -9,6 +9,7 @@ namespace Weather.DAL.Models.GeoArea
 
         [JsonPropertyName("coord")]
         public Coord coord { get; set; }
+
         public string country { get; set; }
         public long timezone { get; set; }
         public long sunrise { get; set; }

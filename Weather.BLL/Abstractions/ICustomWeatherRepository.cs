@@ -1,6 +1,6 @@
 ﻿using Weather.BLL.DTOs.FiveDayWeatherDTOs;
 
-namespace Weather.BLL.Interfaces
+namespace Weather.BLL.Abstractions
 {
     public interface ICustomWeatherRepository
     {

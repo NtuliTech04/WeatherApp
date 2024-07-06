@@ -1,4 +1,4 @@
-﻿namespace Weather.BLL.DTOs
+﻿namespace Weather.DAL.Models
 {
     public class UrlOptions
     {

@@ -1,8 +1,9 @@
-﻿using Weather.BLL.Services.IService;
+﻿using Weather.BLL.Utilities.Mappings.Generic;
+using Weather.DAL.Data.CurrentWeatherResponse;
 
 namespace Weather.BLL.DTOs.CurrentForecastDTOs
 {
-    public class CurrentForecastDto
+    public class CurrentForecastDto : IMapFrom<CurrentWeatherResponse>
     {   
         public long Timestamp { get; set; }
         public DateTime LastUpdated => GetHumanDate(Timestamp);

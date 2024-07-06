@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Interfaces\IWeatherForecastRepository.cs" />
-    <Compile Remove="Interfaces\Repositories\WeatherForecastRepository.cs" />
+    <Compile Remove="Abstractions\IWeatherForecastRepository.cs" />
+    <Compile Remove="Abstractions\Repositories\WeatherForecastRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

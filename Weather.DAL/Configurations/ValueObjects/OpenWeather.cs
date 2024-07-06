@@ -1,4 +1,4 @@
-﻿namespace Weather.DAL.Configurations
+﻿namespace Weather.DAL.Configurations.ValueObjects
 {
     public class OpenWeather
     {

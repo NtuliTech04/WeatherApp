@@ -1,6 +1,6 @@
 ﻿using Weather.BLL.DTOs.FiveDayWeatherDTOs;
 
-namespace Weather.BLL.Interfaces.Repositories
+namespace Weather.BLL.Abstractions.Repositories
 {
     public class CustomWeatherRepository : ICustomWeatherRepository
     {
@@ -15,7 +15,7 @@ namespace Weather.BLL.Interfaces.Repositories
             foreach (var dayHourlyGroupedForecast in fiveDayHourlyGroupedForecast)
             {
                 //Holds hourly temperatures for the day
-                var dayHourlyTemps = new List<Decimal>();
+                var dayHourlyTemps = new List<decimal>();
                 int count = 0;
 
                 //Targets hourly forecast results for one day 
@@ -33,10 +33,17 @@ namespace Weather.BLL.Interfaces.Repositories
                     //When done, then get Min & max, and add to list.
                     if (count == dayHourlyGroupedForecast.Count())
                     {
-                        hourlyGroupedForecast.MinDayTemp = dayHourlyTemps.Min();
-                        hourlyGroupedForecast.MaxDayTemp = dayHourlyTemps.Max();
+                        var minTemp = dayHourlyTemps.Min();
+                        var maxTemp = dayHourlyTemps.Max();
 
-                        fiveDayForecast.Add(hourlyGroupedForecast);
+                        //Gets forecast record corresponding with the max temp for the day.
+                        var recordToAdd = dayHourlyGroupedForecast.FirstOrDefault(x => x.FiveDayTemps.Temp == maxTemp);
+
+                        //Add min & max temps for the day
+                        recordToAdd.MinDayTemp = minTemp;
+                        recordToAdd.MaxDayTemp = maxTemp;
+
+                        fiveDayForecast.Add(recordToAdd);
                     }
                 }
             }
