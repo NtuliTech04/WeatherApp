@@ -4,8 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 ## Custom
-# appsettings.json
-# appsettings.Development.json
+/Weather.API/appsettings.json
+/Weather.API/appsettings.Development.json
 
 
 # User-specific files
